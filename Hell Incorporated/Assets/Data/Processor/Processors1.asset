@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f4ea74ffecdf654e87b7eece1d420d1, type: 3}
   m_Name: Processors1
   m_EditorClassIdentifier: 
-  list:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  list: []
