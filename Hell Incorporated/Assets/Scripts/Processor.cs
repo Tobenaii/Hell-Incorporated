@@ -6,10 +6,12 @@ public class Processor : MonoBehaviour
 {
     [SerializeField]
     private ProcessorListSet m_procListSet;
-
     [SerializeField]
-    private float m_processingTime;
-    private float m_processTimer;
+    private GameObjectPool m_paperPool;
+    [SerializeField]
+    private Transform m_paperLocation;
+    private GameObject m_paperInstance;
+
     private Soul m_currentSoul;
 
     private bool m_isProcessing;
@@ -18,8 +20,9 @@ public class Processor : MonoBehaviour
     public void StartProcessing(Soul soul)
     {
         m_currentSoul = soul;
-        m_processTimer = m_processingTime;
-        IsProcessing = true;
+        m_paperInstance = m_paperPool.GetObject();
+        m_paperInstance.transform.position = m_paperLocation.position;
+        m_paperInstance.transform.rotation = m_paperLocation.rotation;
     }
 
     public void Lock()
@@ -39,16 +42,13 @@ public class Processor : MonoBehaviour
         m_procListSet.Insert(index, this);
     }
 
+    public void SendToHell()
+    {
+        m_currentSoul.SendToHell();
+        IsProcessing = false;
+        m_currentSoul = null;
+    }
     private void Update()
     {
-        if (m_currentSoul == null)
-            return;
-        m_processTimer -= Time.deltaTime;
-        if (m_processTimer <= 0)
-        {
-            m_currentSoul.SendToHell();
-            IsProcessing = false;
-            m_currentSoul = null;
-        }
     }
 }
