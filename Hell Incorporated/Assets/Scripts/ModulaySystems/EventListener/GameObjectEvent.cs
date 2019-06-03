@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Events/GameObject")]
+[CreateAssetMenu(menuName = "ModularSystem/Event/GameObject")]
 public class GameObjectEvent : GameEvent<CustomGameObjectEvent, GameObjectEvent, GameObject>
 {
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Events/FloatEvent")]
+[CreateAssetMenu(menuName = "ModularSystem/Event/FloatEvent")]
 public class FloatEvent : GameEvent<CustomFloatEvent, FloatEvent, float>
 {
 }

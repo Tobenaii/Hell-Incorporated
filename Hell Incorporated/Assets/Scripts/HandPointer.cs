@@ -68,7 +68,7 @@ public class HandPointer : MonoBehaviour
                 m_heldObject.transform.parent = m_originParent;
                 m_heldObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 direction = m_heldObject.transform.position - m_prevObjPos;
-                m_heldObject.GetComponent<Rigidbody>().AddForce(transform.forward * 35 * Vector3.Magnitude(direction), ForceMode.Impulse);
+                m_heldObject.GetComponent<Rigidbody>().AddForce(transform.forward * 70 * Vector3.Magnitude(direction), ForceMode.Impulse);
                 m_heldObject.GetComponent<Rigidbody>().freezeRotation = false;
                 m_heldObject = null;
                 m_line.enabled = true;

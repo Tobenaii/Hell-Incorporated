@@ -192,9 +192,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1070484810186835427}
   - component: {fileID: 1325305109}
+  - component: {fileID: 7497607381287264058}
+  - component: {fileID: 2218690949967569965}
   m_Layer: 0
   m_Name: Imp
-  m_TagString: Untagged
+  m_TagString: Imp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +231,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_impPool: {fileID: 11400000, guid: 77422b9312a3f4045915f16a1ac9361d, type: 2}
-  m_impSpeed: 10
+  m_impSpeed: 4
+  m_impList: {fileID: 11400000, guid: 48c62e110ed8d32408db63b72a92c16d, type: 2}
+--- !u!54 &7497607381287264058
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380145577531272564}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2218690949967569965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380145577531272564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.15, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7760961167456443501
 GameObject:
   m_ObjectHideFlags: 0
