@@ -40,3 +40,8 @@ public class CustomFloatEvent : CustomUnityEvent<float>
 public class CustomGameObjectEvent : CustomUnityEvent<GameObject>
 {
 }
+
+[System.Serializable]
+public class CustomStringEvent : CustomUnityEvent<string>
+{
+}
