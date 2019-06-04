@@ -10,14 +10,28 @@ public class Scanner : MonoBehaviour
     private FloatEvent m_scanEvent;
     [SerializeField]
     private ProcState m_procState;
+    private bool m_autoScanning;
 
     private void Start()
     {
         m_procState.state = ProcState.ProcessorState.Scan;
     }
 
+    public void SetAutoScan()
+    {
+        m_autoScanning = true;
+    }
+
+    public void Scan()
+    {
+        m_scanEvent.Invoke(0.0f);
+        m_procState.state = ProcState.ProcessorState.Type;
+    }
+
     private void OnTriggerStay(Collider other)
     {
+        if (m_autoScanning)
+            return;
         if (m_procState.state != ProcState.ProcessorState.Scan)
             return;
         if (other.transform.CompareTag("Paper"))
@@ -26,8 +40,7 @@ public class Scanner : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, q, m_rotationSpeed);
             if (transform.rotation == q)
             {
-                m_scanEvent.Invoke(0.0f);
-                m_procState.state = ProcState.ProcessorState.Type;
+                Scan();
             }
         }
     }

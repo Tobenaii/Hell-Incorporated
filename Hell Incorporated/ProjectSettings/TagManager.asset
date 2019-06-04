@@ -8,6 +8,7 @@ TagManager:
   - Keyboard
   - StampArea
   - Imp
+  - Ground
   layers:
   - Default
   - TransparentFX

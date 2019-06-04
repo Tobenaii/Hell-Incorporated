@@ -13,6 +13,16 @@ public abstract class ListSet<T> : ScriptableObject
         list.Clear();
     }
 
+    private void OnEnable()
+    {
+        list.Clear();
+    }
+
+    public bool Containts (T obj)
+    {
+        return list.Contains(obj);
+    }
+
     public void Add(T obj)
     {
         list.Add(obj);

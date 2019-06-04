@@ -10,15 +10,28 @@ public class Stamp : MonoBehaviour
     private ProcState m_procState;
     [SerializeField]
     private float m_rotationSpeed;
+    private bool m_autoWorker;
+
+    public void SetAutoWorker()
+    {
+        m_autoWorker = true;
+    }
+
+    public void StampPaper()
+    {
+        m_stampEvent.Invoke(0.0f);
+        m_procState.state = ProcState.ProcessorState.Scan;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (m_autoWorker)
+            return;
         if (m_procState.state != ProcState.ProcessorState.Stamp)
             return;
         if (other.transform.CompareTag("StampArea"))
         {
-            m_stampEvent.Invoke(0.0f);
-            m_procState.state = ProcState.ProcessorState.Scan;
+            StampPaper();
         }
     }
 
