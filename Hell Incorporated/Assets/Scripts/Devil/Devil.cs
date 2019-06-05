@@ -15,7 +15,6 @@ public class Devil : MonoBehaviour
     private void OnEnable()
     {
         m_isPissed = (m_workingImpList.Count > 0);
-        Debug.Log(m_playerProc.value.name);
     }
 
     void Update()

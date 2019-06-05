@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 7880602126018573822}
   - component: {fileID: 7850339219907296541}
   - component: {fileID: 2912215456203672859}
-  - component: {fileID: 7259023327978765200}
   m_Layer: 0
   m_Name: Paper
   m_TagString: Paper
@@ -168,33 +167,4 @@ MonoBehaviour:
   m_unstampedMat: {fileID: 2100000, guid: d3384075606fcd34b85052dde6c1a24a, type: 2}
   m_stampedMat: {fileID: 2100000, guid: db2f69e1dcd396f4aa127abf759d6931, type: 2}
   m_paperPool: {fileID: 11400000, guid: b318840bc834f7544b88cee701b9aeaf, type: 2}
-  m_goingToHellMoveSpeed: 5
---- !u!114 &7259023327978765200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5886595285369234231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2512b1de5b8202f4ebb3ba96bff6e4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: c4a6ee816939e6f40b86a353047b24c4, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2912215456203672859}
-        m_MethodName: Stamp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: CustomFloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+  m_goingToHellMoveSpeed: 1

@@ -105,9 +105,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_procListSet: {fileID: 11400000, guid: 32595186bba86e14e87b150a6c1b8619, type: 2}
-  m_paperPrefab: {fileID: 5886595285369234231, guid: 793987a863402d947b2aa958254802f9,
-    type: 3}
+  m_paperPool: {fileID: 11400000, guid: b318840bc834f7544b88cee701b9aeaf, type: 2}
   m_paperLocation: {fileID: 846981556623304787}
+  m_scoreEvent: {fileID: 0}
+  m_playerProc: {fileID: 0}
+  m_isPlayerProcessor: 0
+  m_minAiSpeed: 2
+  m_maxAiSpeed: 6
 --- !u!1 &846981555361818496
 GameObject:
   m_ObjectHideFlags: 0
