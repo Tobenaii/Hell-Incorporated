@@ -5,7 +5,7 @@ using UnityEngine;
 public class StampWorker : Worker
 {
     [SerializeField]
-    private GameObject m_stamp;
+    private GameObject m_stamp = null;
     private enum StampPhase { Wait, Stamp };
     private StampPhase m_stampPhase = StampPhase.Wait;
     private Vector3 pos1;

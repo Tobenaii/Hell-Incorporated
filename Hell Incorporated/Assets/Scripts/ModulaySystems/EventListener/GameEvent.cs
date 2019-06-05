@@ -26,6 +26,30 @@ public abstract class GameEvent<T, V, U> : ScriptableObject where T : CustomUnit
     }
 }
 
+[CreateAssetMenu(menuName = "ModularSystem/Event/Null")]
+public class GameEvent : ScriptableObject
+{
+    private List<GameEventListener> listeners = new List<GameEventListener>();
+
+    public void Invoke()
+    {
+        foreach (GameEventListener e in listeners)
+        {
+            e.Invoke();
+        }
+    }
+
+    public void AttachListener(GameEventListener e)
+    {
+        listeners.Add(e);
+    }
+
+    public void DetachListener(GameEventListener e)
+    {
+        listeners.Remove(e);
+    }
+}
+
 [System.Serializable]
 public abstract class CustomUnityEvent<T> : UnityEvent<T>
 {

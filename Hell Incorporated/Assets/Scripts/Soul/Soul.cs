@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Soul : MonoBehaviour
 {
-    private Transform m_hellDoor;
+    private Transform m_hellDoor = null;
     [SerializeField]
-    private float m_moveSpeed;
+    private float m_moveSpeed = 0;
     [SerializeField]
-    private float m_goingToHellMoveSpeed;
+    private float m_goingToHellMoveSpeed = 0;
     [SerializeField]
-    private GameObjectPool m_soulPool;
+    private GameObjectPool m_soulPool = null;
 
     private Processor m_currentProcessor;
 

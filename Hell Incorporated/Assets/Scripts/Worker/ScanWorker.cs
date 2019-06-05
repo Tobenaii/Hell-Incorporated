@@ -7,7 +7,7 @@ public class ScanWorker : Worker
     private enum ScanPhase { Wait, Scan};
 
     [SerializeField]
-    private GameObject m_scanner;
+    private GameObject m_scanner = null;
     private ScanPhase m_scanPhase = ScanPhase.Wait;
     private Vector3 pos1;
     private Vector3 pos2;

@@ -6,7 +6,7 @@ public class Organ : MonoBehaviour
 {
     private Rigidbody m_rb;
     [SerializeField]
-    private GameObjectListSet m_imps;
+    private GameObjectListSet m_imps = null;
 
     private void Start()
     {

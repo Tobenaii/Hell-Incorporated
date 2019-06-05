@@ -24,3 +24,25 @@ public class GameEventListener<T, V, U> : MonoBehaviour where T : CustomUnityEve
         gameEvent.DetachListener(this);
     }
 }
+
+public class GameEventListener : MonoBehaviour
+{
+    public GameEvent gameEvent;
+    public UnityEvent response;
+
+    public void Invoke()
+    {
+        response.Invoke();
+    }
+
+    private void OnEnable()
+    {
+        gameEvent.AttachListener(this);
+    }
+
+    private void OnDisable()
+    {
+        gameEvent.DetachListener(this);
+    }
+}
+

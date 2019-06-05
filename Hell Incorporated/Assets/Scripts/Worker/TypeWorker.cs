@@ -5,7 +5,7 @@ using UnityEngine;
 public class TypeWorker : Worker
 {
     [SerializeField]
-    private Computer m_computer;
+    private Computer m_computer = null;
     private enum TypePhase { Wait, Type };
     private TypePhase m_typePhase = TypePhase.Wait;
     private Vector3 pos1;

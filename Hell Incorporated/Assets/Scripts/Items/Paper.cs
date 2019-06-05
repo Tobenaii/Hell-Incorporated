@@ -5,14 +5,14 @@ using UnityEngine;
 public class Paper : MonoBehaviour
 {
     [SerializeField]
-    private Material m_unstampedMat;
+    private Material m_unstampedMat = null;
     [SerializeField]
-    private Material m_stampedMat;
+    private Material m_stampedMat = null;
     [SerializeField]
-    private GameObjectPool m_paperPool;
+    private GameObjectPool m_paperPool = null;
 
     [SerializeField]
-    private float m_goingToHellMoveSpeed;
+    private float m_goingToHellMoveSpeed = 0;
     private Transform m_hellDoor;
     private bool m_sendingToHell;
 

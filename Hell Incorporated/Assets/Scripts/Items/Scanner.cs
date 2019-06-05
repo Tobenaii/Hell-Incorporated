@@ -5,11 +5,11 @@ using UnityEngine;
 public class Scanner : MonoBehaviour
 {
     [SerializeField]
-    private float m_rotationSpeed;
+    private float m_rotationSpeed = 0;
     [SerializeField]
-    private FloatEvent m_scanEvent;
+    private FloatEvent m_scanEvent = null;
     [SerializeField]
-    private ProcState m_procState;
+    private ProcState m_procState = null;
     private bool m_autoScanning;
 
     private void Start()

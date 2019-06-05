@@ -6,7 +6,7 @@ using static OVRInput;
 public class HandPointer : MonoBehaviour
 {
     [SerializeField]
-    private FloatEvent m_keyboardEvent;
+    private FloatEvent m_keyboardEvent = null;
     private LineRenderer m_line;
     private Transform m_heldObject;
     private Transform m_originParent;

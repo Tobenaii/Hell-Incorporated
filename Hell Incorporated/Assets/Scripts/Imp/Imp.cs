@@ -5,13 +5,13 @@ using UnityEngine;
 public class Imp : MonoBehaviour
 {
     [SerializeField]
-    private GameObjectPool m_impPool;
+    private GameObjectPool m_impPool = null;
     [SerializeField]
-    private float m_impSpeed;
+    private float m_impSpeed = 0;
     [SerializeField]
-    private GameObjectListSet m_impList;
+    private GameObjectListSet m_impList = null;
     [SerializeField]
-    private GameObjectListSet m_workingImpList;
+    private GameObjectListSet m_workingImpList = null;
     private Transform m_hellDoor;
     private bool m_isFlying;
 
@@ -27,12 +27,12 @@ public class Imp : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         transform.rotation = Quaternion.identity;
-        //if (m_workingImpList.Containts(gameObject))
-        //    return;
-        //if (m_workingImpList.List.Count < 3)
-        //{
-        //    Fall();
-        //}
+        if (m_workingImpList.Containts(gameObject))
+            return;
+        if (m_workingImpList.List.Count < 3)
+        {
+            Fall();
+        }
     }
 
     private void OnDisable()

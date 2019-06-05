@@ -5,15 +5,15 @@ using UnityEngine;
 public abstract class Worker : MonoBehaviour
 {
     [SerializeField]
-    private GameObjectListSet m_impWorkers;
+    private GameObjectListSet m_impWorkers = null;
     [SerializeField]
-    private int m_workerNumber;
+    private int m_workerNumber = 0;
     [SerializeField]
-    protected float m_workSpeed;
+    protected float m_workSpeed = 0;
     [SerializeField]
-    private ProcState m_procState;
+    private ProcState m_procState = null;
     [SerializeField]
-    private protected Processor m_processor;
+    private protected Processor m_processor = null;
     protected GameObject m_imp;
     protected bool m_startedState;
     bool m_isWorking;

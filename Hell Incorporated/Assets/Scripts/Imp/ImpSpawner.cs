@@ -5,11 +5,11 @@ using UnityEngine;
 public class ImpSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObjectPool m_impPool;
+    private GameObjectPool m_impPool = null;
     [SerializeField]
-    private float m_spawnChance;
+    private float m_spawnChance = 0;
     [SerializeField]
-    private float m_spawnTime;
+    private float m_spawnTime = 0;
     private float m_spawnTimer;
 
     private void Start()

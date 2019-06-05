@@ -5,17 +5,17 @@ using UnityEngine;
 public class SoulSpawner : MonoBehaviour
 {
     [SerializeField]
-    private float m_spawnRate;
+    private float m_spawnRate = 0;
     [SerializeField]
-    private int m_queueAmmount;
+    private int m_queueAmmount = 0;
     [SerializeField]
-    private float m_timeForNextQueue;
+    private float m_timeForNextQueue = 0;
     private float m_nextQueueTimer;
     private int m_inQueue;
     [SerializeField]
-    private GameObjectPool m_soulPool;
+    private GameObjectPool m_soulPool = null;
     [SerializeField]
-    private ProcessorListSet m_procListSet;
+    private ProcessorListSet m_procListSet = null;
     private float m_timer;
     private Soul m_currentSoul;
 

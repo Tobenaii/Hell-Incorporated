@@ -8,6 +8,8 @@ public abstract class ListSet<T> : ScriptableObject
     private List<T> list = new List<T>();
     public IReadOnlyList<T> List { get { return list.AsReadOnly(); } private set { } }
 
+    public int Count => list.Count;
+
     private void OnDisable()
     {
         list.Clear();

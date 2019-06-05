@@ -5,11 +5,11 @@ using UnityEngine;
 public class Stamp : MonoBehaviour
 {
     [SerializeField]
-    private FloatEvent m_stampEvent;
+    private FloatEvent m_stampEvent = null;
     [SerializeField]
-    private ProcState m_procState;
+    private ProcState m_procState = null;
     [SerializeField]
-    private float m_rotationSpeed;
+    private float m_rotationSpeed = 0;
     private bool m_autoWorker;
 
     public void SetAutoWorker()

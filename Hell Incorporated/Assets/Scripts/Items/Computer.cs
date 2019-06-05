@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Computer : MonoBehaviour
 {
     [SerializeField]
-    private Text m_screenText;
+    private Text m_screenText = null;
     [SerializeField]
-    private ProcState m_procState;
+    private ProcState m_procState = null;
     int m_typeIndex;
 
     public void ResetWindow()

@@ -12,7 +12,7 @@ public class Reference<TType, TValue> where TValue : Variable<TType>
     [SerializeField]
     private TType constant;
     [SerializeField]
-    private TValue variable;
+    private TValue variable = null;
     public TType Value
     {
         get

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TextMeshPro))]
 public class Dialogue : MonoBehaviour
 {
     [SerializeField]
-    private float m_dialogueSpeed;
-
-    private TextMeshPro m_text;
+    private float m_dialogueSpeed = 0;
+    [SerializeField]
+    private TextMeshPro m_text = null;
 
     private bool m_isDialoging;
     private bool m_waitingForPage;
@@ -42,11 +41,6 @@ public class Dialogue : MonoBehaviour
         m_currentPage = 0;
         m_currentLetter = 0;
         m_timer = m_dialogueSpeed;
-    }
-
-    void Awake()
-    {
-        m_text = GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame

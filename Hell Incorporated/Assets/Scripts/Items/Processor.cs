@@ -5,13 +5,18 @@ using UnityEngine;
 public class Processor : MonoBehaviour
 {
     [SerializeField]
-    private ProcessorListSet m_procListSet;
+    private ProcessorListSet m_procListSet = null;
     [SerializeField]
-    private GameObjectPool m_paperPool;
+    private GameObjectPool m_paperPool = null;
     [SerializeField]
-    private Transform m_paperLocation;
+    private Transform m_paperLocation = null;
+    [SerializeField]
+    private FloatEvent m_scoreEvent = null;
     private GameObject m_paperInstance;
     private Soul m_currentSoul;
+    [SerializeField]
+    private bool m_isPlayerProcessor;
+    public bool IsPlayerProcessor => m_isPlayerProcessor;
 
     private bool m_isProcessing;
     public bool IsProcessing { get { return m_isProcessing; } private set { m_isProcessing = value; } }
@@ -51,6 +56,7 @@ public class Processor : MonoBehaviour
         IsProcessing = false;
         m_currentSoul = null;
         HasHaper = false;
+        m_scoreEvent.Invoke(1.0f);
     }
     private void Update()
     {

@@ -1,0 +1,10 @@
+Tutorial1Text
+/start
+Put some dialogue in here for use later. Import this text file into Unity and create a DialogueList asset. Drag this file into the DialogueList inspector for parsing.
+When this Dialogue is needed later, reference the DialogueList and grab the Dialogue by its ID.
+/break
+Tutorial2Text
+/start
+This is another Dialogue test that's used to see if multiple different Dialogues are being parsed and added to the DialogueList
+/break
+	
