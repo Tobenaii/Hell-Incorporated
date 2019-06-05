@@ -5395,6 +5395,8 @@ MonoBehaviour:
   m_scoreEvent: {fileID: 11400000, guid: 472a9e00dfb3f2b408261bceabb0f611, type: 2}
   m_playerProc: {fileID: 11400000, guid: 1e7aa928ab5d746418ed6db479d97fb6, type: 2}
   m_isPlayerProcessor: 1
+  m_minAiSpeed: 0
+  m_maxAiSpeed: 0
 --- !u!114 &1141026562
 MonoBehaviour:
   m_ObjectHideFlags: 0
