@@ -28,24 +28,26 @@ public class DevilSpawner : MonoBehaviour
         m_devilInScene = true;
     }
 
+    void OnDevilDissapear()
+    {
+        m_devilInScene = false;
+        m_timer = 1;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (m_devilInScene)
-        {
-            if (m_devilInstance.activeSelf)
-                m_devilInScene = false;
             return;
-        }
 
+        m_timer -= Time.deltaTime;
         if (m_timer <= 0)
         {
-            m_timer = 1;
             float spawn = Random.Range(0, 100);
             if (spawn < m_spawnChancePerSecond)
                 SpawnDevil();
+            else
+                m_timer = 1;
         }
-        else if (!m_devilInScene)
-            m_timer -= Time.deltaTime;
     }
 }

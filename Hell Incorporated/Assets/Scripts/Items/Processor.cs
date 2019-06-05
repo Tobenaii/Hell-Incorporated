@@ -15,6 +15,8 @@ public class Processor : MonoBehaviour
     private GameObject m_paperInstance;
     private Soul m_currentSoul;
     [SerializeField]
+    private GameObjectValue m_playerProc;
+    [SerializeField]
     private bool m_isPlayerProcessor;
     public bool IsPlayerProcessor => m_isPlayerProcessor;
 
@@ -36,6 +38,12 @@ public class Processor : MonoBehaviour
     public void Lock()
     {
         IsProcessing = true;
+    }
+
+    private void Awake()
+    {
+        if (m_isPlayerProcessor)
+            m_playerProc.value = gameObject;
     }
 
     // Start is called before the first frame update

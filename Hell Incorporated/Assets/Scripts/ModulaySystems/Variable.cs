@@ -5,8 +5,7 @@ using UnityEngine;
 
 public abstract class Variable<T> : ScriptableObject
 {
-    [SerializeField]
-    protected T value;
+    public T value;
     [SerializeField]
     protected bool persistent;
 
