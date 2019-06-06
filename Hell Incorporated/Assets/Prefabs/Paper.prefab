@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 7758499119131773454}
   - component: {fileID: 2866550016285010502}
   - component: {fileID: 2912215456203672859}
+  - component: {fileID: 24488285747365689}
   m_Layer: 0
   m_Name: Paper
   m_TagString: Paper
@@ -139,3 +140,16 @@ MonoBehaviour:
   m_stampedMat: {fileID: 2100000, guid: db2f69e1dcd396f4aa127abf759d6931, type: 2}
   m_paperPool: {fileID: 11400000, guid: b318840bc834f7544b88cee701b9aeaf, type: 2}
   m_goingToHellMoveSpeed: 1
+--- !u!65 &24488285747365689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5886595285369234231}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.36, z: 9.999999}
+  m_Center: {x: 0, y: 1.16, z: 0}

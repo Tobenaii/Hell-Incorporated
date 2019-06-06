@@ -42,13 +42,13 @@ public class Imp : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         transform.rotation = Quaternion.identity;
         m_state = m_flyToHellAnim;
-        if (m_workingImpList.Containts(gameObject))
-            return;
-        if (m_workingImpList.List.Count < 3)
-        {
-            Fall();
-        }
-        m_state.Init(transform);
+        //if (m_workingImpList.Containts(gameObject))
+        //    return;
+        //if (m_workingImpList.List.Count < 3)
+        //{
+        //    Fall();
+        //}
+        //m_state.Init(transform);
     }
 
     private void OnDisable()
