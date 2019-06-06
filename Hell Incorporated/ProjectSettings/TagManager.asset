@@ -9,6 +9,9 @@ TagManager:
   - StampArea
   - Imp
   - Ground
+  - Pickup
+  - AiProcessor
+  - OrganSpawn
   layers:
   - Default
   - TransparentFX

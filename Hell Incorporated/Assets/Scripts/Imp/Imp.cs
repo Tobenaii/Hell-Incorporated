@@ -24,7 +24,7 @@ public class Imp : MonoBehaviour
 
     private void Start()
     {
-        m_hellDoor = GameObject.Find("HellDoor").transform;
+        m_hellDoor = GameObject.Find("PortalEffect").transform;
     }
 
     public void SetWorking()

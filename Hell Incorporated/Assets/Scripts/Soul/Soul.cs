@@ -19,7 +19,7 @@ public class Soul : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_hellDoor = GameObject.Find("HellDoor").transform;   
+        m_hellDoor = GameObject.Find("PortalEffect").transform;   
     }
 
     public bool FindProcessor(ProcessorListSet procListSet)

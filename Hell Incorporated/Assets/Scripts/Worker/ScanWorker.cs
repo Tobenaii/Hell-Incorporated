@@ -25,7 +25,7 @@ public class ScanWorker : Worker
         }
         else if (m_scanPhase == ScanPhase.Scan)
         {
-            if (!m_processor.HasHaper)
+            if (!m_processor.HasPaper)
                 return;
             m_startedState = true;
             if (MoveToPosition(m_scanner.transform, pos2, m_workSpeed))
