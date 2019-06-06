@@ -18,3 +18,6 @@ MonoBehaviour:
   m_forwardOffset: 1
   m_rightOffset: 0
   m_upOffset: 0
+  m_lockX: 0
+  m_lockY: 1
+  m_lockZ: 0

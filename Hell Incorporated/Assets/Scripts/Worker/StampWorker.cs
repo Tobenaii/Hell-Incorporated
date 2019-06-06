@@ -36,8 +36,14 @@ public class StampWorker : Worker
     protected override void InitWorker()
     {
         m_stamp.GetComponent<Rigidbody>().isKinematic = true;
-        m_stamp.transform.GetChild(0).GetComponent<Stamp>().SetAutoWorker();
+        m_stamp.transform.GetChild(0).GetComponent<Stamp>().ToggleAutoStamp();
         pos1 = m_imp.transform.position + m_imp.transform.right * 0.4f;
         pos2 = (m_imp.transform.position + m_imp.transform.right * 0.4f) + Vector3.down * 0.3f;
+    }
+
+    protected override void Cleanup()
+    {
+        m_stamp.transform.GetChild(0).GetComponent<Stamp>().ToggleAutoStamp();
+        m_stamp.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

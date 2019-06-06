@@ -10,11 +10,11 @@ public class Stamp : MonoBehaviour
     private ProcState m_procState = null;
     [SerializeField]
     private float m_rotationSpeed = 0;
-    private bool m_autoWorker;
+    private bool m_autoStamp;
 
-    public void SetAutoWorker()
+    public void ToggleAutoStamp()
     {
-        m_autoWorker = true;
+        m_autoStamp = !m_autoStamp;
     }
 
     public void StampPaper()
@@ -25,7 +25,7 @@ public class Stamp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_autoWorker)
+        if (m_autoStamp)
             return;
         if (m_procState.state != ProcState.ProcessorState.Stamp)
             return;

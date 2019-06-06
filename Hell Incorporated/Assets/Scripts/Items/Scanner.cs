@@ -17,9 +17,9 @@ public class Scanner : MonoBehaviour
         m_procState.state = ProcState.ProcessorState.Scan;
     }
 
-    public void SetAutoScan()
+    public void ToggleAutoScan()
     {
-        m_autoScanning = true;
+        m_autoScanning = !m_autoScanning;
     }
 
     public void Scan()

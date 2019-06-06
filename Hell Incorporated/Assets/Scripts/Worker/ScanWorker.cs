@@ -38,9 +38,15 @@ public class ScanWorker : Worker
 
     protected override void InitWorker()
     {
-        m_scanner.GetComponent<Scanner>().SetAutoScan();
+        m_scanner.GetComponent<Scanner>().ToggleAutoScan();
         m_scanner.GetComponent<Rigidbody>().isKinematic = true;
         pos1 = m_imp.transform.position + m_imp.transform.right * -0.3f;
         pos2 = m_imp.transform.position + m_imp.transform.right * -0.5f;
+    }
+
+    protected override void Cleanup()
+    {
+        m_scanner.GetComponent<Scanner>().ToggleAutoScan();
+        m_scanner.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

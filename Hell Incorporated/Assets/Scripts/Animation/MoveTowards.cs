@@ -39,7 +39,7 @@ public class MoveTowards : AnimState
             target.y = transform.position.y;
         if (m_lockZ)
             target.z = transform.position.z;
-        if (transform.position != target)
+        if (Vector3.Distance(transform.position, target) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, target, m_moveSpeed * Time.deltaTime);
             if (m_stareAtTarget)

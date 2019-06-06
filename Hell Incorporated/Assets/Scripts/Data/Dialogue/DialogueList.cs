@@ -30,6 +30,12 @@ public class DialogueList : ScriptableObject
                 newLine = false;
                 continue;
             }
+            if (line == "/page")
+            {
+                dialogue += " /page ";
+                newLine = true;
+                continue;
+            }
             newLine = true;
             switch (lineType)
             {
@@ -51,7 +57,6 @@ public class DialogueList : ScriptableObject
                     }
                     dialogue += line;
                     break;
-                
             }   
         }
     }

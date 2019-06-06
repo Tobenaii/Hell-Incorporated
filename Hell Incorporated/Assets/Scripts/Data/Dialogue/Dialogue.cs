@@ -24,6 +24,13 @@ public class Dialogue : MonoBehaviour
         string page = "";
         foreach (string word in d.Split(' '))
         {
+            if (word == "/page")
+            {
+                m_cutDialogue.Add(page);
+                m_text.text = "";
+                page = "";
+                continue;
+            }
             m_text.text += word + " ";
             m_text.ForceMeshUpdate();
             if (!m_text.isTextOverflowing)

@@ -38,4 +38,9 @@ public class TypeWorker : Worker
         pos1 = transform.position;
         pos2 = transform.position + transform.up * -0.3f;
     }
+
+    protected override void Cleanup()
+    {
+        
+    }
 }

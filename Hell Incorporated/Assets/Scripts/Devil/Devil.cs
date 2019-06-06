@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Devil : MonoBehaviour
 {
-    private enum State { LookAround, WalkAround };
+    private enum State { LookAround, ShooAway };
 
     [SerializeField]
     private GameObjectListSet m_workingImpList;
@@ -39,6 +39,12 @@ public class Devil : MonoBehaviour
                 case State.LookAround:
                     LookForStuffToGetAngryAbout();
                     break;
+                case State.ShooAway:
+                    for (int i = 0; i < m_workingImpList.Count; i++)
+                    {
+                        m_workingImpList.List[i].GetComponent<Imp>().FlyAway();
+                    }
+                    break;
             }
         }
         m_bobAnim.UpdateAnim(transform);
@@ -50,6 +56,7 @@ public class Devil : MonoBehaviour
         {
             m_currentAnim = m_moveToPlayerAnim;
             m_currentAnim.Init(transform);
+            m_state = State.ShooAway;
         }
         else
             gameObject.SetActive(false);

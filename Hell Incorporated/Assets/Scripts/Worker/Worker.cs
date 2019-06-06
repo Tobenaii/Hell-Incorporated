@@ -28,7 +28,9 @@ public abstract class Worker : MonoBehaviour
         }
         if (!m_imp.GetComponent<Imp>().IsWorking)
         {
+            Cleanup();
             Init();
+            return;
         }
 
         if (MoveToPosition(m_imp.transform, transform.position, 5.0f))
@@ -49,34 +51,11 @@ public abstract class Worker : MonoBehaviour
                 return;
             DoAction();
         }
-        //if (m_impWorkers.List.Count > m_workerNumber)
-        //{
-        //    if (!m_isWorking)
-        //    {
-        //        m_isWorking = true;
-        //        Init();
-        //    }
-        //    if (MoveToPosition(m_imp.transform, transform.position, 5.0f))
-        //    {
-        //        if (MoveToRotation(m_imp.transform, transform.rotation, 100.0f))
-        //        {
-        //            if (!m_init)
-        //            {
-        //                InitWorker();
-        //                m_init = true;
-        //            }
-        //        }
-        //    }
-        //    if (m_init)
-        //    {
-        //        if (!m_startedState && (int)m_procState.state != m_workerNumber)
-        //            return;
-        //        DoAction();
-        //    }
-        //}
     }
     protected abstract void DoAction();
     protected abstract void InitWorker();
+
+    protected abstract void Cleanup();
 
     private void Init()
     {

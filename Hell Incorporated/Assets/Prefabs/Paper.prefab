@@ -42,8 +42,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.49, y: 0.19, z: 9.03}
-  m_Center: {x: 0, y: 0.06, z: 0}
+  m_Size: {x: 9.49, y: 0.52, z: 9.03}
+  m_Center: {x: 0, y: 0.19, z: 0}
 --- !u!1 &5886595285369234231
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,8 +55,6 @@ GameObject:
   - component: {fileID: 8245218788926663790}
   - component: {fileID: 7758499119131773454}
   - component: {fileID: 2866550016285010502}
-  - component: {fileID: 7880602126018573822}
-  - component: {fileID: 7850339219907296541}
   - component: {fileID: 2912215456203672859}
   m_Layer: 0
   m_Name: Paper
@@ -125,33 +123,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7880602126018573822
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5886595285369234231}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &7850339219907296541
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5886595285369234231}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 5, z: 9.999999}
-  m_Center: {x: 0, y: 1.08, z: 0}
 --- !u!114 &2912215456203672859
 MonoBehaviour:
   m_ObjectHideFlags: 0
