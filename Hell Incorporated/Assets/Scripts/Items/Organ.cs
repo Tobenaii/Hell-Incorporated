@@ -37,4 +37,10 @@ public class Organ : MonoBehaviour
             collision.transform.GetComponent<Imp>().Fall();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("AiProcessor"))
+            other.transform.GetComponent<AiProcessor>().Distract();
+    }
 }

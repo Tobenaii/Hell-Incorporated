@@ -9,6 +9,8 @@ public class HandPointer : MonoBehaviour
     private FloatEvent m_keyboardEvent = null;
     [SerializeField]
     private GameObjectListSet m_workingImpList;
+    [SerializeField]
+    private GameObjectPool m_organPool;
     private LineRenderer m_line;
     private Transform m_heldObject;
     private Transform m_originParent;
@@ -20,6 +22,15 @@ public class HandPointer : MonoBehaviour
     {
         m_line = GetComponent<LineRenderer>();
         m_keyboardCheck = false;
+    }
+
+    private void PickupObject(GameObject obj)
+    {
+        m_originParent = obj.transform.parent;
+        obj.transform.SetParent(transform);
+        obj.transform.GetComponent<Rigidbody>().freezeRotation = true;
+        m_heldObject = obj.transform;
+        m_line.enabled = false;
     }
 
     // Update is called once per frame
@@ -52,13 +63,16 @@ public class HandPointer : MonoBehaviour
                         hit.transform.GetComponent<Imp>().FlyAway();
                     }
                 }
+                else if (hit.transform.CompareTag("OrganSpawn"))
+                {
+                    GameObject organ = m_organPool.GetObject();
+                    organ.transform.position = hit.transform.position;
+                    organ.transform.SetParent(GameObject.Find("Fix").transform);
+                    PickupObject(organ);
+                }
                 else
                 {
-                    m_originParent = hit.transform.parent;
-                    hit.transform.SetParent(transform);
-                    hit.transform.GetComponent<Rigidbody>().freezeRotation = true;
-                    m_heldObject = hit.transform;
-                    m_line.enabled = false;
+                    PickupObject(hit.transform.gameObject);
                 }
             }
             m_line.SetPosition(1, hit.point);
