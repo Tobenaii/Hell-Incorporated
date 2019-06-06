@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_workingImpList: {fileID: 11400000, guid: 0fafcd92bcac30b489ffdee8d51a485e, type: 2}
-  m_procListSet: {fileID: 11400000, guid: 32595186bba86e14e87b150a6c1b8619, type: 2}
+  m_playerProc: {fileID: 11400000, guid: 1e7aa928ab5d746418ed6db479d97fb6, type: 2}
+  m_lookAroundAnim: {fileID: 11400000, guid: f55ec65cb58c7854aafccf1dbd887a13, type: 2}
+  m_bobAnim: {fileID: 11400000, guid: 8f01092f6979dfb45b748b846e16b0ea, type: 2}
+  m_moveToPlayerAnim: {fileID: 11400000, guid: 65f8cdbf5da00e44e9c61cfd9dd5dcf6, type: 2}
 --- !u!1 &8559396683567306821
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,9 +75,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8559396683567306821}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 5, z: 3}
+  m_LocalScale: {x: 3, y: 5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 5680510240481377946}
   m_RootOrder: 0

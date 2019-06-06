@@ -7,6 +7,8 @@ public class HandPointer : MonoBehaviour
 {
     [SerializeField]
     private FloatEvent m_keyboardEvent = null;
+    [SerializeField]
+    private GameObjectListSet m_workingImpList;
     private LineRenderer m_line;
     private Transform m_heldObject;
     private Transform m_originParent;
@@ -40,13 +42,24 @@ public class HandPointer : MonoBehaviour
                     m_keyboardCheck = true;
                 }
             }
-            if (m_heldObject == null && OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
+
+            else if (m_heldObject == null && OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
             {
-                m_originParent = hit.transform.parent;
-                hit.transform.SetParent(transform);
-                hit.transform.GetComponent<Rigidbody>().freezeRotation = true;
-                m_heldObject = hit.transform;
-                m_line.enabled = false;
+                if (hit.transform.CompareTag("Imp"))
+                {
+                    if (m_workingImpList.Containts(hit.transform.gameObject))
+                    {
+                        hit.transform.GetComponent<Imp>().FlyAway();
+                    }
+                }
+                else
+                {
+                    m_originParent = hit.transform.parent;
+                    hit.transform.SetParent(transform);
+                    hit.transform.GetComponent<Rigidbody>().freezeRotation = true;
+                    m_heldObject = hit.transform;
+                    m_line.enabled = false;
+                }
             }
             m_line.SetPosition(1, hit.point);
         }

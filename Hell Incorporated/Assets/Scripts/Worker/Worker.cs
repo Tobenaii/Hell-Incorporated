@@ -21,39 +21,77 @@ public abstract class Worker : MonoBehaviour
 
     private void Update()
     {
-        if (m_impWorkers.List.Count > m_workerNumber)
+        if (m_imp == null)
         {
-            if (!m_isWorking)
+            Init();
+            return;
+        }
+        if (!m_imp.GetComponent<Imp>().IsWorking)
+        {
+            Init();
+        }
+
+        if (MoveToPosition(m_imp.transform, transform.position, 5.0f))
+        {
+            if (MoveToRotation(m_imp.transform, transform.rotation, 100.0f))
             {
-                m_isWorking = true;
-                Init();
-            }
-            if (MoveToPosition(m_imp.transform, transform.position, 5.0f))
-            {
-                if (MoveToRotation(m_imp.transform, transform.rotation, 100.0f))
+                if (!m_init)
                 {
-                    if (!m_init)
-                    {
-                        InitWorker();
-                        m_init = true;
-                    }
+                    InitWorker();
+                    m_init = true;
                 }
             }
-            if (m_init)
-            {
-                if (!m_startedState && (int)m_procState.state != m_workerNumber)
-                    return;
-                DoAction();
-            }
         }
+
+        if (m_init)
+        {
+            if (!m_startedState && (int)m_procState.state != m_workerNumber)
+                return;
+            DoAction();
+        }
+        //if (m_impWorkers.List.Count > m_workerNumber)
+        //{
+        //    if (!m_isWorking)
+        //    {
+        //        m_isWorking = true;
+        //        Init();
+        //    }
+        //    if (MoveToPosition(m_imp.transform, transform.position, 5.0f))
+        //    {
+        //        if (MoveToRotation(m_imp.transform, transform.rotation, 100.0f))
+        //        {
+        //            if (!m_init)
+        //            {
+        //                InitWorker();
+        //                m_init = true;
+        //            }
+        //        }
+        //    }
+        //    if (m_init)
+        //    {
+        //        if (!m_startedState && (int)m_procState.state != m_workerNumber)
+        //            return;
+        //        DoAction();
+        //    }
+        //}
     }
     protected abstract void DoAction();
     protected abstract void InitWorker();
 
     private void Init()
     {
-        m_imp = m_impWorkers.List[m_workerNumber];
-        m_imp.GetComponent<Rigidbody>().isKinematic = true;
+        m_imp = null;
+        m_init = false;
+        foreach (GameObject imp in m_impWorkers.List)
+        {
+            Imp i = imp.GetComponent<Imp>();
+            if (!i.IsWorking)
+            {
+                i.SetWorking();
+                m_imp = imp;
+                m_imp.GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
     }
 
     protected bool MoveToPosition(Transform t, Vector3 v, float speed)

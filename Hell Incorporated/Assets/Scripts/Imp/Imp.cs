@@ -14,25 +14,41 @@ public class Imp : MonoBehaviour
     private GameObjectListSet m_workingImpList = null;
     private Transform m_hellDoor;
     private bool m_isFlying;
+    [SerializeField]
+    private AnimState m_flyToHellAnim;
+    [SerializeField]
+    private AnimState m_scaredToHellAnim;
+    private AnimState m_state;
+    public bool IsWorking => m_isWorking;
+    private bool m_isWorking;
 
     private void Start()
     {
         m_hellDoor = GameObject.Find("HellDoor").transform;
     }
 
+    public void SetWorking()
+    {
+        m_isWorking = true;
+    }
+
     private void OnEnable()
     {
+        m_isWorking = false;
         m_isFlying = true;
         m_impList.Add(gameObject);
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        GetComponent<Rigidbody>().isKinematic = false;
         transform.rotation = Quaternion.identity;
+        m_state = m_flyToHellAnim;
         if (m_workingImpList.Containts(gameObject))
             return;
         if (m_workingImpList.List.Count < 3)
         {
             Fall();
         }
+        m_state.Init(transform);
     }
 
     private void OnDisable()
@@ -44,18 +60,24 @@ public class Imp : MonoBehaviour
     {
         GetComponent<Rigidbody>().useGravity = true;
         m_isFlying = false;
-        m_impList.Remove(gameObject);
+    }
+
+    public void FlyAway()
+    {
+        m_state = m_scaredToHellAnim;
+        m_state.Init(transform);
+        m_workingImpList.Remove(gameObject);
+        m_isFlying = true;
+        m_isWorking = false;
     }
 
     void Update()
     {
         if (!m_isFlying)
             return;
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(m_hellDoor.position.x, transform.position.y, transform.position.z), m_impSpeed * Time.deltaTime);
-        if (transform.position.x == m_hellDoor.position.x)
-        {
+
+        if (m_state.UpdateAnim(transform))
             m_impPool.DestroyObject(gameObject);
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
