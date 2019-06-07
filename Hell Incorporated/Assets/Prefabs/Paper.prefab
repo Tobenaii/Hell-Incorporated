@@ -140,6 +140,7 @@ MonoBehaviour:
   m_stampedMat: {fileID: 2100000, guid: db2f69e1dcd396f4aa127abf759d6931, type: 2}
   m_paperPool: {fileID: 11400000, guid: b318840bc834f7544b88cee701b9aeaf, type: 2}
   m_goingToHellMoveSpeed: 1
+  m_hellDoor: {fileID: 11400000, guid: 04fdb01d2e4b3ed43a5bd4c6243f8952, type: 2}
 --- !u!65 &24488285747365689
 BoxCollider:
   m_ObjectHideFlags: 0

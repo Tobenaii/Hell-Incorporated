@@ -12,6 +12,7 @@ TagManager:
   - Pickup
   - AiProcessor
   - OrganSpawn
+  - Item
   layers:
   - Default
   - TransparentFX

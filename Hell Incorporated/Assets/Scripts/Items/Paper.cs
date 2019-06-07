@@ -13,14 +13,10 @@ public class Paper : MonoBehaviour
 
     [SerializeField]
     private float m_goingToHellMoveSpeed = 0;
-    private Transform m_hellDoor;
+    [SerializeField]
+    private GameObjectValue m_hellDoor;
     private bool m_sendingToHell;
 
-
-    private void Start()
-    {
-        m_hellDoor = GameObject.Find("PortalEffect").transform;
-    }
     private void OnEnable()
     {
         GetComponent<MeshRenderer>().material = m_unstampedMat;
@@ -36,8 +32,8 @@ public class Paper : MonoBehaviour
     {
         if (m_sendingToHell)
         {
-            transform.position = Vector3.MoveTowards(transform.position, m_hellDoor.position, m_goingToHellMoveSpeed * Time.deltaTime);
-            if (transform.position == m_hellDoor.position)
+            transform.position = Vector3.MoveTowards(transform.position, m_hellDoor.value.transform.position, m_goingToHellMoveSpeed * Time.deltaTime);
+            if (transform.position == m_hellDoor.value.transform.position)
             {
                 m_sendingToHell = false;
                 m_paperPool.DestroyObject(gameObject);

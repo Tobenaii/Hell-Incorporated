@@ -12,7 +12,8 @@ public class Imp : MonoBehaviour
     private GameObjectListSet m_impList = null;
     [SerializeField]
     private GameObjectListSet m_workingImpList = null;
-    private Transform m_hellDoor;
+    [SerializeField]
+    private GameObjectValue m_hellDoor;
     private bool m_isFlying;
     [SerializeField]
     private AnimState m_flyToHellAnim;
@@ -21,11 +22,6 @@ public class Imp : MonoBehaviour
     private AnimState m_state;
     public bool IsWorking => m_isWorking;
     private bool m_isWorking;
-
-    private void Start()
-    {
-        m_hellDoor = GameObject.Find("PortalEffect").transform;
-    }
 
     public void SetWorking()
     {

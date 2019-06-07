@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Soul : MonoBehaviour
 {
-    private Transform m_hellDoor = null;
+    [SerializeField]
+    private GameObjectValue m_hellDoor = null;
     [SerializeField]
     private float m_moveSpeed = 0;
     [SerializeField]
@@ -17,11 +18,6 @@ public class Soul : MonoBehaviour
     private bool m_sendingToHell;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        m_hellDoor = GameObject.Find("PortalEffect").transform;   
-    }
-
     public bool FindProcessor(ProcessorListSet procListSet)
     {
         foreach (Processor proc in procListSet.List)
@@ -45,8 +41,8 @@ public class Soul : MonoBehaviour
     {
         if (m_sendingToHell)
         {
-            transform.position = Vector3.MoveTowards(transform.position, m_hellDoor.position, m_goingToHellMoveSpeed * Time.deltaTime);
-            if (transform.position == m_hellDoor.position)
+            transform.position = Vector3.MoveTowards(transform.position, m_hellDoor.value.transform.position, m_goingToHellMoveSpeed * Time.deltaTime);
+            if (transform.position == m_hellDoor.value.transform.position)
             {
                 m_sendingToHell = false;
                 m_soulPool.DestroyObject(gameObject);
