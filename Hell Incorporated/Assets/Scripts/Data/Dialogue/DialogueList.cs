@@ -59,7 +59,9 @@ public class DialogueList : ScriptableObject
                     break;
             }   
         }
+#if UNITY_EDITOR
         UnityEditor.EditorUtility.SetDirty(this);
+#endif
     }
 
     public string GetDialogue(int index)
