@@ -10,6 +10,8 @@ public class Stamp : MonoBehaviour
     private ProcState m_procState = null;
     [SerializeField]
     private float m_rotationSpeed = 0;
+    [SerializeField]
+    private AudioSource m_stampAudio;
     private bool m_autoStamp;
 
     public void ToggleAutoStamp()
@@ -21,6 +23,7 @@ public class Stamp : MonoBehaviour
     {
         m_stampEvent.Invoke(0.0f);
         m_procState.state = ProcState.ProcessorState.Scan;
+        m_stampAudio.Play();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -75,7 +75,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void OnClick()
     {
         if (!m_isDialoging)
             return;

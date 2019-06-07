@@ -11,6 +11,8 @@ public class HandPointer : MonoBehaviour
     private GameObjectListSet m_workingImpList;
     [SerializeField]
     private GameObjectPool m_organPool;
+    [SerializeField]
+    private AudioSource m_typeSound;
     private LineRenderer m_line;
     private Transform m_heldObject;
     private Transform m_originParent;
@@ -33,13 +35,21 @@ public class HandPointer : MonoBehaviour
         m_line.enabled = false;
     }
 
+    public void LetGo()
+    {
+        m_heldObject.transform.parent = m_originParent;
+        m_heldObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        m_heldObject = null;
+        m_line.enabled = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(transform.position - transform.forward * 0.1f, transform.forward);
 #if UNITY_EDITOR
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        transform.LookAt(ray.origin + ray.direction * 500);
+        transform.LookAt((ray.origin - transform.forward * 0.1f) + ray.direction * 500);
 #endif
         m_line.SetPosition(0, ray.origin);
         RaycastHit hit;
@@ -51,6 +61,7 @@ public class HandPointer : MonoBehaviour
                 {
                     m_keyboardEvent.Invoke(0.0f);
                     m_keyboardCheck = true;
+                    m_typeSound.Play();
                 }
             }
 
@@ -69,6 +80,10 @@ public class HandPointer : MonoBehaviour
                     organ.transform.position = hit.transform.position;
                     organ.transform.SetParent(GameObject.Find("Fix").transform);
                     PickupObject(organ);
+                }
+                else if (hit.transform.CompareTag("Dialogue"))
+                {
+                    hit.transform.GetComponent<Dialogue>().OnClick();
                 }
                 else
                 {
@@ -92,13 +107,16 @@ public class HandPointer : MonoBehaviour
             m_heldObject.GetComponent<Rigidbody>().velocity = direction * 10;
             if (OVRInput.GetUp(Button.PrimaryIndexTrigger) || Input.GetMouseButtonUp(0))
             {
-                m_heldObject.transform.parent = m_originParent;
-                m_heldObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                BoundItem item = m_heldObject.GetComponent<BoundItem>();
+                if (item != null)
+                    item.OnDrop();
                 direction = m_heldObject.transform.position - m_prevObjPos;
-                m_heldObject.GetComponent<Rigidbody>().AddForce(Vector3.Normalize(transform.up * -1 + transform.forward) * 40 * Vector3.Magnitude(direction), ForceMode.Impulse);
+                float force = 40 * Vector3.Magnitude(direction);
+                if (force > 200)
+                    force = 200;
+                m_heldObject.GetComponent<Rigidbody>().AddForce(Vector3.Normalize(transform.up * -1 + transform.forward) * force, ForceMode.Impulse);
                 m_heldObject.GetComponent<Rigidbody>().freezeRotation = false;
-                m_heldObject = null;
-                m_line.enabled = true;
+                LetGo();
             }
         }
         if (m_heldObject != null)

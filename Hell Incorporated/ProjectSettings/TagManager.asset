@@ -13,6 +13,7 @@ TagManager:
   - AiProcessor
   - OrganSpawn
   - Item
+  - Dialogue
   layers:
   - Default
   - TransparentFX

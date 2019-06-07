@@ -10,7 +10,11 @@ public class Scanner : MonoBehaviour
     private FloatEvent m_scanEvent = null;
     [SerializeField]
     private ProcState m_procState = null;
+    [SerializeField]
+    private AudioSource m_scanAudio;
+
     private bool m_autoScanning;
+
 
     private void Start()
     {
@@ -26,6 +30,7 @@ public class Scanner : MonoBehaviour
     {
         m_scanEvent.Invoke(0.0f);
         m_procState.state = ProcState.ProcessorState.Type;
+        m_scanAudio.Play();
     }
 
     private void OnTriggerStay(Collider other)
