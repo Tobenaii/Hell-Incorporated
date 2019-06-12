@@ -109,7 +109,7 @@ public class HandPointer : MonoBehaviour
             {
                 BoundItem item = m_heldObject.GetComponent<BoundItem>();
                 if (item != null)
-                    item.OnDrop();
+                    item.Dissolve();
                 direction = m_heldObject.transform.position - m_prevObjPos;
                 float force = 40 * Vector3.Magnitude(direction);
                 if (force > 200)

@@ -22,21 +22,17 @@ public class DevilSpawner : MonoBehaviour
 
     void SpawnDevil()
     {
-        m_devilInstance.SetActive(true);
         m_devilInstance.transform.localPosition = Vector3.zero;
         m_devilInstance.transform.localRotation = Quaternion.identity;
-        m_devilInScene = true;
-    }
-
-    void OnDevilDissapear()
-    {
-        m_devilInScene = false;
+        m_devilInstance.SetActive(true);
         m_timer = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        m_devilInScene = m_devilInstance.activeSelf;
+
         if (m_devilInScene)
             return;
 
@@ -46,8 +42,6 @@ public class DevilSpawner : MonoBehaviour
             float spawn = Random.Range(0, 100);
             if (spawn < m_spawnChancePerSecond)
                 SpawnDevil();
-            else
-                m_timer = 1;
         }
     }
 }

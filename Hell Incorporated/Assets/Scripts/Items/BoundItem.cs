@@ -11,7 +11,7 @@ public class BoundItem : MonoBehaviour
     private TimeLerper m_timeLerper;
     private float m_dissolveAmmount;
 
-    public void OnDrop()
+    public void Dissolve()
     {
         m_dissolve = true;
         m_timeLerper = new TimeLerper();

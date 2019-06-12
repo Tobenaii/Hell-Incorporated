@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Devil : MonoBehaviour
 {
-    private enum State { LookAround, ShooAway };
+    private enum State { MoveOutOfPortal, LookAround, ShooAway, MoveIntoPortal };
 
     [SerializeField]
     private GameObjectListSet m_workingImpList;
     [SerializeField]
     private GameObjectValue m_playerProc;
     [SerializeField]
+    private AnimState m_moveOutPortalAnim;
+    [SerializeField]
     private AnimState m_lookAroundAnim;
     [SerializeField]
     private AnimState m_bobAnim;
+    [SerializeField]
+    private AnimState m_moveBackIntoPortalAnim;
     [SerializeField]
     private AnimState m_moveToPlayerAnim;
     private AnimState m_currentAnim;
@@ -23,8 +27,8 @@ public class Devil : MonoBehaviour
 
     private void OnEnable()
     {
-        m_state = State.LookAround;
-        m_currentAnim = m_lookAroundAnim;
+        m_state = State.MoveOutOfPortal;
+        m_currentAnim = m_moveOutPortalAnim;
         m_isPissed = (m_workingImpList.Count > 0);
         m_currentAnim.Init(transform);
         m_bobAnim.Init(transform);
@@ -36,6 +40,11 @@ public class Devil : MonoBehaviour
         {
             switch (m_state)
             {
+                case State.MoveOutOfPortal:
+                    m_currentAnim = m_lookAroundAnim;
+                    m_currentAnim.Init(transform);
+                    m_state = State.LookAround;
+                    break;
                 case State.LookAround:
                     LookForStuffToGetAngryAbout();
                     break;
@@ -44,6 +53,10 @@ public class Devil : MonoBehaviour
                     {
                         m_workingImpList.List[i].GetComponent<Imp>().FlyAway();
                     }
+                    LookForStuffToGetAngryAbout();
+                    break;
+                case State.MoveIntoPortal:
+                    gameObject.SetActive(false);
                     break;
             }
         }
@@ -59,6 +72,10 @@ public class Devil : MonoBehaviour
             m_state = State.ShooAway;
         }
         else
-            gameObject.SetActive(false);
+        {
+            m_currentAnim = m_moveBackIntoPortalAnim;
+            m_currentAnim.Init(transform);
+            m_state = State.MoveIntoPortal;
+        }
     }
 }
