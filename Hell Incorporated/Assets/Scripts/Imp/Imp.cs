@@ -37,7 +37,7 @@ public class Imp : MonoBehaviour
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         GetComponent<Rigidbody>().isKinematic = false;
         transform.rotation = Quaternion.identity;
-        //m_state = m_flyToHellAnim;
+        m_state = m_flyToHellAnim;
         //if (m_workingImpList.Containts(gameObject))
         //    return;
         //if (m_workingImpList.List.Count < 3)
