@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScaredToHell
   m_EditorClassIdentifier: 
   m_target: {fileID: 11400000, guid: 04fdb01d2e4b3ed43a5bd4c6243f8952, type: 2}
-  m_moveSpeed: 10
+  m_moveTime: 3
   m_stareAtTarget: 1
   m_forwardOffset: 0
   m_rightOffset: 0
@@ -21,3 +21,6 @@ MonoBehaviour:
   m_lockX: 0
   m_lockY: 0
   m_lockZ: 0
+  m_checkX: 1
+  m_checkY: 0
+  m_checkZ: 1

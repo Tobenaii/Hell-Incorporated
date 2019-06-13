@@ -21,3 +21,6 @@ MonoBehaviour:
   m_lockX: 0
   m_lockY: 1
   m_lockZ: 0
+  m_checkX: 1
+  m_checkY: 0
+  m_checkZ: 1

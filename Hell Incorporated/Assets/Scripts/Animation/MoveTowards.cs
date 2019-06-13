@@ -8,7 +8,7 @@ public class MoveTowards : AnimState
     [SerializeField]
     private GameObjectValue m_target;
     [SerializeField]
-    private float m_moveSpeed;
+    private float m_moveTime;
     [SerializeField]
     private bool m_stareAtTarget;
     [SerializeField]
@@ -23,10 +23,19 @@ public class MoveTowards : AnimState
     private bool m_lockY;
     [SerializeField]
     private bool m_lockZ;
+    [SerializeField]
+    private bool m_checkX = true;
+    [SerializeField]
+    private bool m_checkY = true;
+    [SerializeField]
+    private bool m_checkZ = true;
+    Vector3 m_initPos;
+    TimeLerper m_lerper = new TimeLerper();
 
     public override void Init(Transform transform)
     {
-        
+        m_initPos = transform.position;
+        m_lerper.Reset();
     }
 
     public override bool UpdateAnim(Transform transform)
@@ -39,9 +48,16 @@ public class MoveTowards : AnimState
             target.y = transform.position.y;
         if (m_lockZ)
             target.z = transform.position.z;
-        if (Vector3.Distance(transform.position, target) > 0.01f)
+        Vector3 check = transform.position;
+        if (m_checkX)
+            check.x = target.x;
+        if (m_checkY)
+            check.y = target.y;
+        if (m_checkZ)
+            check.z = target.z;
+        if (Vector3.Distance(transform.position, check) > 0.1f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, m_moveSpeed * Time.deltaTime);
+            transform.position = m_lerper.Lerp(m_initPos, target, m_moveTime);
             if (m_stareAtTarget)
                 transform.LookAt(new Vector3(m_target.value.transform.position.x, transform.position.y, m_target.value.transform.position.z));
             return false;

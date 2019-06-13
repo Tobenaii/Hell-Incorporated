@@ -23,7 +23,7 @@ public class BobAnim : AnimState
     {
         m_sin += m_bobSpeed * Time.deltaTime;
         float sin = Mathf.Sin(m_sin);
-        transform.position = new Vector3(transform.position.x, m_initHeight + Mathf.Sin(m_sin) * m_bobHeight, transform.position.z);
+        transform.position = new Vector3(transform.position.x, m_initHeight + sin * m_bobHeight, transform.position.z);
         return (sin == 0);
     }
 }

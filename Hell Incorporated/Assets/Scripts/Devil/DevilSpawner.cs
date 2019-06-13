@@ -31,6 +31,7 @@ public class DevilSpawner : MonoBehaviour
         m_devilInstance.transform.localPosition = Vector3.zero;
         m_devilInstance.transform.localRotation = Quaternion.identity;
         m_devilInstance.SetActive(true);
+        m_devilInstance.GetComponent<Devil>().Init();
         m_timer = 1;
     }
 

@@ -25,7 +25,7 @@ public class Devil : MonoBehaviour
     private float m_waitTimer;
     private State m_state;
 
-    private void OnEnable()
+    public void Init()
     {
         m_state = State.MoveOutOfPortal;
         m_currentAnim = m_moveOutPortalAnim;
