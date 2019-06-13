@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stamp : MonoBehaviour
 {
     [SerializeField]
-    private FloatEvent m_stampEvent = null;
+    private GameEvent m_stampEvent = null;
     [SerializeField]
     private ProcState m_procState = null;
     [SerializeField]
@@ -14,6 +14,9 @@ public class Stamp : MonoBehaviour
     private AudioSource m_stampAudio;
     [SerializeField]
     private GameEvent m_tutorialEvent;
+    [SerializeField]
+    private GameEvent m_startGameEvent;
+    private bool m_gameStarted;
     private bool m_autoStamp;
 
     public void ToggleAutoStamp()
@@ -23,7 +26,7 @@ public class Stamp : MonoBehaviour
 
     public void StampPaper()
     {
-        m_stampEvent.Invoke(0.0f);
+        m_stampEvent.Invoke();
         m_procState.state = ProcState.ProcessorState.Scan;
         m_stampAudio.Play();
     }
@@ -38,6 +41,11 @@ public class Stamp : MonoBehaviour
         {
             StampPaper();
             m_tutorialEvent.Invoke();
+            if (!m_gameStarted)
+            {
+                m_startGameEvent.Invoke();
+                m_gameStarted = true;
+            }
         }
     }
 

@@ -6,7 +6,7 @@ using static OVRInput;
 public class HandPointer : MonoBehaviour
 {
     [SerializeField]
-    private FloatEvent m_keyboardEvent = null;
+    private GameEvent m_keyboardEvent = null;
     [SerializeField]
     private GameObjectListSet m_workingImpList;
     [SerializeField]
@@ -55,11 +55,13 @@ public class HandPointer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, 1 << 9))
         {
+            hit.transform.GetComponent<BoundItem>()?.Held(true);
+
             if (hit.transform.CompareTag("Keyboard"))
             {
                 if (!m_keyboardCheck)
                 {
-                    m_keyboardEvent.Invoke(0.0f);
+                    m_keyboardEvent.Invoke();
                     m_keyboardCheck = true;
                     m_typeSound.Play();
                 }
@@ -109,7 +111,10 @@ public class HandPointer : MonoBehaviour
             {
                 BoundItem item = m_heldObject.GetComponent<BoundItem>();
                 if (item != null)
+                {
                     item.Dissolve();
+                    item.Held(false);
+                }
                 direction = m_heldObject.transform.position - m_prevObjPos;
                 float force = 40 * Vector3.Magnitude(direction);
                 if (force > 200)

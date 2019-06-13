@@ -48,6 +48,7 @@ public class Dialogue : MonoBehaviour
         m_currentPage = 0;
         m_currentLetter = 0;
         m_timer = m_dialogueSpeed;
+        m_waitingForPage = false;
     }
 
     // Update is called once per frame

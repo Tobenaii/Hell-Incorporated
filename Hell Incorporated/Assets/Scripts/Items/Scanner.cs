@@ -7,7 +7,7 @@ public class Scanner : MonoBehaviour
     [SerializeField]
     private float m_rotationSpeed = 0;
     [SerializeField]
-    private FloatEvent m_scanEvent = null;
+    private GameEvent m_scanEvent = null;
     [SerializeField]
     private ProcState m_procState = null;
     [SerializeField]
@@ -30,7 +30,7 @@ public class Scanner : MonoBehaviour
 
     public void Scan()
     {
-        m_scanEvent.Invoke(0.0f);
+        m_scanEvent.Invoke();
         m_procState.state = ProcState.ProcessorState.Type;
         m_scanAudio.Play();
     }

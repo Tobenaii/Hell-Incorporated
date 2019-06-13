@@ -6,10 +6,12 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField]
     private GameEvent m_tutorialDialogueEvent;
+    [SerializeField]
+    private GameEvent m_beat1Event;
 
     private void Start()
     {
-        m_tutorialDialogueEvent.Invoke();
+        m_beat1Event.Invoke();
     }
 
     public void StartNextTutorial()

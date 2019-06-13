@@ -1,0 +1,12 @@
+Tutorial2Text (d.t.2)
+/start
+Attention all employees...
+/page
+Final warning, organs are for eating, not throwing at your co workers. Such distracting behaviour will result in disembowelment.
+/break
+Tutorial3Text (d.t.3)
+/start
+Attention all employees...
+/page
+If anyone wants to know why Jeffery didn't come into work today, the devil had a word with him yesterday after he was caught harassing the imps
+/break

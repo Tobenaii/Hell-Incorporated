@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9decd0ad8b754418aecede19ce2941, type: 3}
+  m_Name: TutorialDialogue
+  m_EditorClassIdentifier: 
+  m_dialogueFile: {fileID: 4900000, guid: 354c64fe9114878448bec621d8c36136, type: 3}
+  m_dialogues:
+  - Good morning Worker 2,137,890,756 and welcome back to the processing department.
+    /page There are an endless number of damned souls to process so here are the basics...
+    /page First, pick up the scanner and hover it over the paper to scan the document
+  - Secondly, mash the keyboard to input their details to the system
+  - And finally, pick up the stamp and stamp the document for approvalAnd don't forget
+    that customer service grin!
+  - Now get to work!

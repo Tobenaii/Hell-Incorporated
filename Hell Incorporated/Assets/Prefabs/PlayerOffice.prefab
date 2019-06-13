@@ -1302,9 +1302,9 @@ GameObject:
   - component: {fileID: 15760647767943488}
   - component: {fileID: 15760647767943491}
   - component: {fileID: 15760647767943490}
-  - component: {fileID: 15760647767943493}
-  - component: {fileID: 15760647767943502}
-  - component: {fileID: 1860351737478426296}
+  - component: {fileID: 672994063}
+  - component: {fileID: 672994064}
+  - component: {fileID: 672994065}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -1400,8 +1400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_screenText: {fileID: 15760647428565369}
   m_procState: {fileID: 11400000, guid: f0ae1e0d5eefdd44991025f6abbc7601, type: 2}
-  m_tutorialEvent: {fileID: 0}
---- !u!114 &15760647767943493
+  m_tutorialEvent: {fileID: 11400000, guid: 3795f3d4538f6df439e52c9bb1c93f19, type: 2}
+--- !u!114 &672994063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1410,36 +1410,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 15760647767943495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2512b1de5b8202f4ebb3ba96bff6e4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: dca698e82b22af8439a1ea337406f90a, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 15760647767943490}
-        m_MethodName: StartScreen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: CustomFloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
---- !u!114 &15760647767943502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15760647767943495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2512b1de5b8202f4ebb3ba96bff6e4de, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 787078f911f905d418e74bac3e47467c, type: 2}
@@ -1457,9 +1428,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: CustomFloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
---- !u!114 &1860351737478426296
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &672994064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1468,7 +1439,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 15760647767943495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2512b1de5b8202f4ebb3ba96bff6e4de, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: dca698e82b22af8439a1ea337406f90a, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 15760647767943490}
+        m_MethodName: StartScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &672994065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15760647767943495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: c4a6ee816939e6f40b86a353047b24c4, type: 2}
@@ -1486,8 +1486,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: CustomFloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &15760648021244577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,10 +1766,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rotationSpeed: 5
-  m_scanEvent: {fileID: 11400000, guid: dca698e82b22af8439a1ea337406f90a, type: 2}
+  m_scanEvent: {fileID: 0}
   m_procState: {fileID: 11400000, guid: f0ae1e0d5eefdd44991025f6abbc7601, type: 2}
   m_scanAudio: {fileID: 50140003}
-  m_tutorialEvent: {fileID: 0}
+  m_tutorialEvent: {fileID: 11400000, guid: 3795f3d4538f6df439e52c9bb1c93f19, type: 2}
 --- !u!114 &1382385147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4859,7 +4859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ee04980f69bbe48b15eed97f7c87f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_stampEvent: {fileID: 11400000, guid: c4a6ee816939e6f40b86a353047b24c4, type: 2}
+  m_stampEvent: {fileID: 0}
   m_procState: {fileID: 11400000, guid: f0ae1e0d5eefdd44991025f6abbc7601, type: 2}
   m_rotationSpeed: 5
   m_stampAudio: {fileID: 1800078949}
@@ -4904,9 +4904,9 @@ GameObject:
   - component: {fileID: 15760648269959195}
   - component: {fileID: 15760648269959655}
   - component: {fileID: 15760648269959654}
-  - component: {fileID: 1141026562}
   - component: {fileID: 3549413346162354798}
   - component: {fileID: 1573793961}
+  - component: {fileID: 45277080}
   m_Layer: 0
   m_Name: Processor
   m_TagString: Untagged
@@ -4973,35 +4973,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1141026562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15760648269959194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2512b1de5b8202f4ebb3ba96bff6e4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: c4a6ee816939e6f40b86a353047b24c4, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3549413346162354798}
-        m_MethodName: SendToHell
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: CustomFloatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &3549413346162354798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5031,6 +5002,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameObjectValue: {fileID: 11400000, guid: 1e7aa928ab5d746418ed6db479d97fb6, type: 2}
+--- !u!114 &45277080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15760648269959194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c4a6ee816939e6f40b86a353047b24c4, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3549413346162354798}
+        m_MethodName: SendToHell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &768999889241468305
 GameObject:
   m_ObjectHideFlags: 0

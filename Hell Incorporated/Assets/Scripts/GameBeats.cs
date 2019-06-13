@@ -26,21 +26,28 @@ class BeatData
 public class GameBeats : MonoBehaviour
 {
     [SerializeField]
+    private float m_gameTime;
+    [SerializeField]
+    private FloatValue m_gameTimer;
+    [SerializeField]
     private List<BeatData> m_beats;
 
-    private float m_gameTimer;
+    private bool m_gameStarted;
 
     public void StartGame()
     {
-        m_gameTimer = 8 * 60;
+        m_gameTimer.value = 0;
+        m_gameStarted = true;
     }
     private void Update()
     {
-        m_gameTimer -= Time.deltaTime;
+        if (!m_gameStarted)
+            return;
 
+        m_gameTimer.value += Time.deltaTime;
         foreach (BeatData beat in m_beats)
         {
-            beat.Invoke(m_gameTimer);
+            beat.Invoke(m_gameTimer.value);
         }
     }
 }

@@ -17,7 +17,7 @@ public class Logs : MonoBehaviour
     {
         deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
-        Debug.Log("FPS: " + fps);
+        //Debug.Log("FPS: " + fps);
     }
 
     IEnumerator SetFrequency()

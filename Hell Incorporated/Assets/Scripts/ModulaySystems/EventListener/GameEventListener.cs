@@ -16,6 +16,8 @@ public class GameEventListener<T, V, U> : MonoBehaviour where T : CustomUnityEve
 
     private void OnEnable()
     {
+        if (gameEvent == null)
+            Debug.Log(gameObject.name);
         gameEvent.AttachListener(this);
     }
 
@@ -32,6 +34,8 @@ public class GameEventListener : MonoBehaviour
 
     public void Invoke()
     {
+        if (response.GetPersistentEventCount() == 0)
+            return;
         response.Invoke();
     }
 
