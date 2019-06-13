@@ -1,0 +1,8 @@
+Success1Text (d.r.1)
+/start
+Keep up the work and maybe somday you'll get a cubicle made from real whale bone.
+/break
+Success2Text (d.r.2)
+/start
+Keep up this high standard of work and in 10 more life sentences you might get my job.
+/break

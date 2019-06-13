@@ -1,0 +1,44 @@
+Worker1Text (d.w.1)
+/start
+Oh Father we didn't expect to see you...
+/page
+Oh my... go right in.
+/break
+Worker2Text (d.w.2)
+/start
+How do you get sent to Hell for parking tickets?
+/break
+Worker3Text (d.w.3)
+/start
+Wow, that's a lot of kittens.
+/break
+Worker4Text (d.w.4)
+/start
+Did I leave the kidney stove on?
+/break
+Worker5Text (d.w.5)
+/start
+Wonder who I'll get for secret santa this year.
+/break
+Worker6Text (d.w.6)
+/start
+Can't wait for the end of millennium party.
+/break
+Worker7Text (d.w.7)
+/start
+Oh... Looking back at this paper work I think that last soul was innocent...
+/page
+Meh
+/break
+Worker8Text (d.w.8)
+/start
+What do you mean you eat medium rare chicken?
+/break
+Worker9Text (d.w.9)
+/start
+Hold on a second, I have to text my mum.
+/break
+Worker10Text (d.w.10)
+/start
+Mister President... Welcome.
+/break
