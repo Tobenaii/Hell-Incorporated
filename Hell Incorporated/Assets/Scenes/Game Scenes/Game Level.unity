@@ -284,6 +284,19 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1184292248, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: m_margin.z
+      value: 33.17876
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184292248, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056308604711721348, guid: e5404bf55f8f4434c97dffa50fd43bb4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 40db6bc8893c5cf468b5b37cee0eda2e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
 --- !u!1001 &544605075
@@ -438,7 +451,7 @@ GameObject:
   - component: {fileID: 827327579}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
