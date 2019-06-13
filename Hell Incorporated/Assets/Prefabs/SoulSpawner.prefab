@@ -38,10 +38,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2238229781037908139}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72690c4fcfc3ab845991136890b29125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnRate: 0
+  m_spawnRate: 0.1
+  m_queueAmmount: 1000
+  m_timeForNextQueue: 0.001
   m_soulPool: {fileID: 11400000, guid: 12cfb1c240540104193586cdc9afc6f7, type: 2}
+  m_procListSet: {fileID: 11400000, guid: 32595186bba86e14e87b150a6c1b8619, type: 2}

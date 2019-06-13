@@ -80,7 +80,7 @@ public class HandPointer : MonoBehaviour
                 {
                     GameObject organ = m_organPool.GetObject();
                     organ.transform.position = hit.transform.position;
-                    organ.transform.SetParent(GameObject.Find("Fix").transform);
+                    //organ.transform.SetParent(GameObject.Find("Fix").transform);
                     PickupObject(organ);
                 }
                 else if (hit.transform.CompareTag("Dialogue"))
