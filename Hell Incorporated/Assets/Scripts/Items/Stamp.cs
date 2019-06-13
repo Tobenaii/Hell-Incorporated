@@ -12,6 +12,8 @@ public class Stamp : MonoBehaviour
     private float m_rotationSpeed = 0;
     [SerializeField]
     private AudioSource m_stampAudio;
+    [SerializeField]
+    private GameEvent m_tutorialEvent;
     private bool m_autoStamp;
 
     public void ToggleAutoStamp()
@@ -35,6 +37,7 @@ public class Stamp : MonoBehaviour
         if (other.transform.CompareTag("StampArea"))
         {
             StampPaper();
+            m_tutorialEvent.Invoke();
         }
     }
 

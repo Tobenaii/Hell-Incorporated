@@ -9,6 +9,8 @@ public class Computer : MonoBehaviour
     private Text m_screenText = null;
     [SerializeField]
     private ProcState m_procState = null;
+    [SerializeField]
+    private GameEvent m_tutorialEvent;
     int m_typeIndex;
 
     public void ResetWindow()
@@ -27,7 +29,10 @@ public class Computer : MonoBehaviour
         if (m_procState.state != ProcState.ProcessorState.Type)
             return;
         if (m_typeIndex == 5)
+        {
             m_procState.state = ProcState.ProcessorState.Stamp;
+            m_tutorialEvent.Invoke();
+        }
         m_screenText.text += "\n Nah Yeh Nah";
         m_typeIndex++;
     }

@@ -12,6 +12,8 @@ public class Scanner : MonoBehaviour
     private ProcState m_procState = null;
     [SerializeField]
     private AudioSource m_scanAudio;
+    [SerializeField]
+    private GameEvent m_tutorialEvent;
 
     private bool m_autoScanning;
 
@@ -46,6 +48,7 @@ public class Scanner : MonoBehaviour
             if (transform.rotation == q)
             {
                 Scan();
+                m_tutorialEvent.Invoke();
             }
         }
     }
