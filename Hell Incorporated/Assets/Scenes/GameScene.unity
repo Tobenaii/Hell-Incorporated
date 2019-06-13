@@ -1706,5 +1706,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 346e4db7bf0deb1478aa8bd3184e36ef,
         type: 2}
+    - target: {fileID: 6095106891920325994, guid: 4efcce3ac7d36a64398bfe7e72d3bfb0,
+        type: 3}
+      propertyPath: m_beats.Array.data[0].m_timeTillBeat
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095106891920325994, guid: 4efcce3ac7d36a64398bfe7e72d3bfb0,
+        type: 3}
+      propertyPath: m_beats.Array.data[1].m_timeTillBeat
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095106891920325994, guid: 4efcce3ac7d36a64398bfe7e72d3bfb0,
+        type: 3}
+      propertyPath: m_beats.Array.data[2].m_timeTillBeat
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efcce3ac7d36a64398bfe7e72d3bfb0, type: 3}
