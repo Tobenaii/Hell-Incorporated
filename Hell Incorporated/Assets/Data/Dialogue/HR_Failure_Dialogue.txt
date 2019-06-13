@@ -1,0 +1,22 @@
+Failure1Text (d.f.1)
+/start
+How are we supposed to belittle unpaid interns if we're having to stop and remind workers to do their own work!!!
+/break
+Failure2Text (d.f.2)
+/start
+Just a friendly reminder from the boss man, if he catches you slacking off again he'll FIRE you...
+/page
+Sorry just some HR humor, but you really will be banished to the sixth circle of endless ass glass spiders so don't forget that perfect smile!
+/break
+Failure3Text (d.f.3)
+/start
+Hello staff, due to a lack of motivation in the workplace we have decided that you will have through lunch today...
+/page
+And the next 50 years.
+/break
+Failure4Text (d.f.4)
+/start
+And then I told the destroyer of worlds, if you're going to murder billions of people you should off...
+/page
+SHOOT! WRONG NUMBER! GET BACK TO WORK!
+/break
