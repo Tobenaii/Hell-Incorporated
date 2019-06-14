@@ -10,7 +10,7 @@ public class BoundItem : MonoBehaviour
     private bool m_resolve;
     private TimeLerper m_timeLerper;
     private float m_dissolveAmmount;
-    private bool m_isHeld;
+    private bool m_isHeld = false;
 
     public void Held(bool held)
     {

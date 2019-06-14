@@ -41,6 +41,8 @@ public class GameEventListener : MonoBehaviour
 
     private void OnEnable()
     {
+        if (gameEvent == null)
+            Debug.Log(gameObject.name);
         gameEvent.AttachListener(this);
     }
 

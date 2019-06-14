@@ -27,6 +27,7 @@ public class ImpSpawner : MonoBehaviour
             {
                 GameObject imp = m_impPool.GetObject();
                 imp.transform.position = transform.position;
+                imp.GetComponent<Imp>().Init();
             }
             m_spawnTimer = m_spawnTime;
         }

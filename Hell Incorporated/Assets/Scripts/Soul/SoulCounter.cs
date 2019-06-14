@@ -7,11 +7,11 @@ public class SoulCounter : MonoBehaviour
 {
     [SerializeField]
     private TextMeshPro m_text = null;
-    private float m_score;
+    [SerializeField]
+    private FloatValue m_quota;
 
-    public void AddToScore(float score)
+    public void UpdateQuota()
     {
-        m_score += score;
-        m_text.text = "Souls: " + m_score.ToString();
+        m_text.text = "Souls remaining: " + m_quota.value.ToString();
     }
 }

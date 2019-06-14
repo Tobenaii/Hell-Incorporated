@@ -15,8 +15,8 @@ MonoBehaviour:
   m_target: {fileID: 11400000, guid: 04fdb01d2e4b3ed43a5bd4c6243f8952, type: 2}
   m_moveTime: 3
   m_stareAtTarget: 0
-  m_forwardOffset: -3
-  m_rightOffset: 0
+  m_forwardOffset: 0
+  m_rightOffset: -2
   m_upOffset: 0
   m_lockX: 0
   m_lockY: 0

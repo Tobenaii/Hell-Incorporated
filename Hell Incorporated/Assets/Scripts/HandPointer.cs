@@ -13,11 +13,14 @@ public class HandPointer : MonoBehaviour
     private GameObjectPool m_organPool;
     [SerializeField]
     private AudioSource m_typeSound;
+    [SerializeField]
+    private GameEvent m_startGameEvent;
     private LineRenderer m_line;
     private Transform m_heldObject;
     private Transform m_originParent;
     private Vector3 m_prevObjPos;
     private bool m_keyboardCheck;
+    private bool m_shiftStarted;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +58,6 @@ public class HandPointer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, 1 << 9))
         {
-            hit.transform.GetComponent<BoundItem>()?.Held(true);
 
             if (hit.transform.CompareTag("Keyboard"))
             {
@@ -69,6 +71,17 @@ public class HandPointer : MonoBehaviour
 
             else if (m_heldObject == null && OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
             {
+
+                if (hit.transform.CompareTag("StartButton"))
+                {
+                    if (m_shiftStarted)
+                        return;
+                    m_shiftStarted = true;
+                    m_startGameEvent.Invoke();
+                    return;
+                }
+
+                hit.transform.GetComponent<BoundItem>()?.Held(true);
                 if (hit.transform.CompareTag("Imp"))
                 {
                     if (m_workingImpList.Containts(hit.transform.gameObject))

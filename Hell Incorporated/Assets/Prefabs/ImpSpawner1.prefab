@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_impPool: {fileID: 11400000, guid: 77422b9312a3f4045915f16a1ac9361d, type: 2}
   m_spawnChance: 80
-  m_spawnTime: 3
+  m_spawnTime: 10

@@ -37,7 +37,12 @@ public class Processor : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
+    {
+        Init();
+    }
+
+    protected void Init()
     {
         int index = 0;
         foreach (Processor proc in m_procListSet.List)

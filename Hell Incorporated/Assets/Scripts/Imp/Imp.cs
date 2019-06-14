@@ -28,7 +28,7 @@ public class Imp : MonoBehaviour
         m_isWorking = true;
     }
 
-    private void OnEnable()
+    public void Init()
     {
         m_isWorking = false;
         m_isFlying = true;
@@ -36,15 +36,15 @@ public class Imp : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().useGravity = false;
         transform.rotation = Quaternion.identity;
         m_state = m_flyToHellAnim;
-        //if (m_workingImpList.Containts(gameObject))
-        //    return;
-        //if (m_workingImpList.List.Count < 3)
-        //{
-        //    Fall();
-        //}
         m_state.Init(transform);
+    }
+
+    private void OnEnable()
+    {
+
     }
 
     private void OnDisable()
@@ -71,6 +71,9 @@ public class Imp : MonoBehaviour
     {
         if (!m_isFlying)
             return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Fall();
 
         if (m_state.UpdateAnim(transform))
             m_impPool.DestroyObject(gameObject);

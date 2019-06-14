@@ -47,11 +47,11 @@ MonoBehaviour:
   m_gameTime: 480
   m_gameTimer: {fileID: 11400000, guid: 538e7137a598c194cb49406e7d9626a8, type: 2}
   m_beats:
-  - m_timeTillBeat: 5
+  - m_timeTillBeat: 60
     m_event: {fileID: 11400000, guid: cc7380cbfdaded74a80398c5b19fb81a, type: 2}
-  - m_timeTillBeat: 10
+  - m_timeTillBeat: 120
     m_event: {fileID: 11400000, guid: 6e17b31d2839bd943b3b873a9f6e1b3b, type: 2}
-  - m_timeTillBeat: 15
+  - m_timeTillBeat: 1
     m_event: {fileID: 11400000, guid: 5ec762b38ba12e3489633e16b0133f4a, type: 2}
   - m_timeTillBeat: 480
     m_event: {fileID: 11400000, guid: 346e4db7bf0deb1478aa8bd3184e36ef, type: 2}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: b3cb85b056eaabb479b55473ce82c67b, type: 2}
+  gameEvent: {fileID: 11400000, guid: bc59a628ce137ad4a8f79114b0201e3d, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
