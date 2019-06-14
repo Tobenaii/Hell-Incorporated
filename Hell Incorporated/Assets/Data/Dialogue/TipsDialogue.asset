@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dialogueFile: {fileID: 4900000, guid: e68c39657ea835349a6c38c321e7458b, type: 3}
   m_dialogues:
-  - Attention all employees... /page Final warning, organs are for eating, not throwing
-    at your co workers. Such distracting behaviour will result in disembowelment.
-  - Attention all employees... /page If anyone wants to know why Jeffery didn't come
-    into work today, the devil is pulling his tongue out through his belly button
-    after he was caught bribing the imps with organs to do his work.
+  - m_closeOnLastPage: 1
+    m_dialogue: Attention all employees... /page Final warning, organs are for eating,
+      not throwing at your co workers. Such distracting behaviour will result in disembowelment.
+  - m_closeOnLastPage: 1
+    m_dialogue: Attention all employees... /page If anyone wants to know why Jeffery
+      didn't come into work today, the devil is pulling his tongue out through his
+      belly button after he was caught bribing the imps with organs to do his work.

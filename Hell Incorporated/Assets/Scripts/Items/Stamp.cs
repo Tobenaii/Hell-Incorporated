@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stamp : MonoBehaviour
+public class Stamp : Item
 {
     [SerializeField]
     private GameEvent m_stampEvent = null;
-    [SerializeField]
-    private ProcState m_procState = null;
     [SerializeField]
     private float m_rotationSpeed = 0;
     [SerializeField]
@@ -24,11 +22,24 @@ public class Stamp : MonoBehaviour
         m_autoStamp = !m_autoStamp;
     }
 
+    private void Update()
+    {
+        if (m_tut)
+        {
+            if (m_procState.state == ProcState.ProcessorState.Stamp)
+            {
+                m_arrow.SetActive(true);
+                m_tut = false;
+            }
+        }
+    }
+
     public void StampPaper()
     {
         m_stampEvent.Invoke();
         m_procState.state = ProcState.ProcessorState.Scan;
         m_stampAudio.Play();
+        m_arrow.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

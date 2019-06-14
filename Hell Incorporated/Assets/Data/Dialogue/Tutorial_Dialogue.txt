@@ -13,9 +13,8 @@ Secondly, mash the keyboard to input their details to the system
 StampText
 /start
 And finally, pick up the stamp and stamp the document for approval
-And don't forget that customer service grin!
 /break
 FinishedText
 /start
-Now get to work!
+Now get to work! And don't forget that customer service grin :)
 /break

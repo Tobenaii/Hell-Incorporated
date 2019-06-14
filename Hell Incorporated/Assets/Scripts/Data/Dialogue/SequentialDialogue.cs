@@ -17,15 +17,15 @@ public class SequentialDialogue : Dialogue
         m_curDialogue++;
         if (m_curDialogue >= m_dialogueList[m_curDialogueList].Count)
             return;
+        m_dialogueBox.SetActive(true);
+        GetComponent<BoxCollider>().enabled = true;
         DialogueThingy dialogue = m_dialogueList[m_curDialogueList].GetDialogue(m_curDialogue);
         StartDialogue(dialogue);
-        return ;
+        return;
     }
 
     public void OpenNextDialogue()
     {
-        m_dialogueBox.SetActive(true);
-        GetComponent<BoxCollider>().enabled = true;
         m_curDialogue = -1;
         m_curDialogueList++;
         if (m_curDialogueList >= m_dialogueList.Count)

@@ -19,6 +19,7 @@ public class Computer : MonoBehaviour
         m_typeIndex = 0;
     }
 
+
     public void StartScreen()
     {
         m_screenText.text = "John Snow";

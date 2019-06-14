@@ -87,18 +87,17 @@ public class Dialogue : MonoBehaviour
         if (m_waitingForPage)
         {
             m_waitingForPage = false;
-            m_currentLetter = 0;
             m_currentPage++;
-            if (m_currentPage == m_cutDialogue.Count && !m_currentDialogue.CloseOnLastPatge)
-            {
-                m_currentPage--;
-                return;
-            }
-            m_text.text = "";
+            if (m_currentDialogue.CloseOnLastPatge || m_currentPage < m_cutDialogue.Count)
+                m_text.text = "";
+            m_currentLetter = 0;
             if (m_currentPage == m_cutDialogue.Count)
             {
                 GetComponent<BoxCollider>().enabled = false;
-                m_dialogueBox.SetActive(false);
+                if (m_currentDialogue.CloseOnLastPatge)
+                {
+                    m_dialogueBox.SetActive(false);
+                }
                 m_isDialoging = false;
             }
         }

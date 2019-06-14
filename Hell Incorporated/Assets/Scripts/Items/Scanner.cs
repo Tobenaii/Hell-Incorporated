@@ -2,25 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scanner : MonoBehaviour
+public class Scanner : Item
 {
     [SerializeField]
     private float m_rotationSpeed = 0;
     [SerializeField]
     private GameEvent m_scanEvent = null;
     [SerializeField]
-    private ProcState m_procState = null;
-    [SerializeField]
     private AudioSource m_scanAudio;
     [SerializeField]
     private GameEvent m_tutorialEvent;
-
     private bool m_autoScanning;
-
 
     private void Start()
     {
         m_procState.state = ProcState.ProcessorState.Scan;
+    }
+
+    private void Update()
+    {
+        if (m_tut)
+        {
+            if (m_procState.state == ProcState.ProcessorState.Scan)
+            {
+                m_arrow.SetActive(true);
+                m_tut = false;
+            }
+        }
     }
 
     public void ToggleAutoScan()
@@ -33,6 +41,7 @@ public class Scanner : MonoBehaviour
         m_scanEvent.Invoke();
         m_procState.state = ProcState.ProcessorState.Type;
         m_scanAudio.Play();
+        m_arrow.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
