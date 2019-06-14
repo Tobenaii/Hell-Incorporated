@@ -12,6 +12,6 @@ public class SoulCounter : MonoBehaviour
 
     public void UpdateQuota()
     {
-        m_text.text = "Souls remaining: " + m_quota.value.ToString();
+        m_text.text = m_quota.value.ToString();
     }
 }

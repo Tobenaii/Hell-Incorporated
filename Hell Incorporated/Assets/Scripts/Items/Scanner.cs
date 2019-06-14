@@ -13,14 +13,18 @@ public class Scanner : Item
     [SerializeField]
     private GameEvent m_tutorialEvent;
     private bool m_autoScanning;
+    private BoundItem m_boundItem;
 
     private void Start()
     {
         m_procState.state = ProcState.ProcessorState.Scan;
+        m_boundItem = GetComponent<BoundItem>();
     }
 
     private void Update()
     {
+        m_boundItem.enabled = (!m_autoScanning);
+
         if (m_tut)
         {
             if (m_procState.state == ProcState.ProcessorState.Scan)

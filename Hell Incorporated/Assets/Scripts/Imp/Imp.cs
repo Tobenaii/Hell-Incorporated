@@ -55,6 +55,7 @@ public class Imp : MonoBehaviour
     public void Fall()
     {
         GetComponent<Rigidbody>().useGravity = true;
+        m_impList.Remove(gameObject);
         m_isFlying = false;
     }
 
@@ -79,14 +80,23 @@ public class Imp : MonoBehaviour
             m_impPool.DestroyObject(gameObject);
     }
 
+    public void FindPlayer()
+    {
+        Fall();
+        if (m_workingImpList.Containts(gameObject))
+            return;
+        if (m_workingImpList.List.Count < 3)
+            m_workingImpList.Add(gameObject);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Ground"))
-        {
-            if (m_workingImpList.Containts(gameObject))
-                return;
-            if (m_workingImpList.List.Count < 3)
-                m_workingImpList.Add(gameObject);
-        }
+        //if (collision.transform.CompareTag("Ground"))
+        //{
+        //    if (m_workingImpList.Containts(gameObject))
+        //        return;
+        //    if (m_workingImpList.List.Count < 3)
+        //        m_workingImpList.Add(gameObject);
+        //}
     }
 }

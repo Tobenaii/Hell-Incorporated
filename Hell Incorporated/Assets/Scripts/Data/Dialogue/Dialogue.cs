@@ -20,6 +20,14 @@ public class Dialogue : MonoBehaviour
     private float m_timer;
     private DialogueThingy m_currentDialogue;
 
+    public void CloseDialogue()
+    {
+        m_text.text = "";
+        m_dialogueBox.SetActive(false);
+        m_isDialoging = false;
+        GetComponent<BoxCollider>().enabled = false;
+    }
+
     public void StartDialogue(DialogueThingy dialogue)
     {
         m_currentDialogue = dialogue;

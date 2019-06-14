@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04da6fa82debd5243a2ea444fb86800f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnChancePerSecond: 100
+  m_maxTime: 60
+  m_spawnInterval: 30
   m_devilPrefab: {fileID: 5680510240481377924, guid: caf324654ee030a40be2cf494dbc7602,
     type: 3}
 --- !u!114 &981476080797918310

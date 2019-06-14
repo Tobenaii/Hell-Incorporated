@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MoveToPlayer
   m_EditorClassIdentifier: 
   m_target: {fileID: 11400000, guid: 1e7aa928ab5d746418ed6db479d97fb6, type: 2}
-  m_moveTime: 0
+  m_moveTime: 2
   m_stareAtTarget: 1
   m_forwardOffset: 1
   m_rightOffset: 0

@@ -16,6 +16,12 @@ public class Stamp : Item
     private GameEvent m_startGameEvent;
     private bool m_gameStarted;
     private bool m_autoStamp;
+    private BoundItem m_boundItem;
+
+    private void Start()
+    {
+        m_boundItem = transform.parent.GetComponent<BoundItem>();
+    }
 
     public void ToggleAutoStamp()
     {
@@ -24,6 +30,8 @@ public class Stamp : Item
 
     private void Update()
     {
+        m_boundItem.enabled = !m_autoStamp;
+
         if (m_tut)
         {
             if (m_procState.state == ProcState.ProcessorState.Stamp)

@@ -10,6 +10,7 @@ public class Phone : MonoBehaviour
     public void Ring()
     {
         m_phoneRingSound.Play();
+        GetComponent<SequentialDialogue>().CloseDialogue();
     }
 
     public void OpenDialogue()

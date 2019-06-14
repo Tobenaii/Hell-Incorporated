@@ -20,6 +20,14 @@ public class Devil : MonoBehaviour
     private AnimState m_moveBackIntoPortalAnim;
     [SerializeField]
     private AnimState m_moveToPlayerAnim;
+    [SerializeField]
+    private AudioSource m_evilLaugh;
+    [SerializeField]
+    private FloatValue m_soulQuota;
+    [SerializeField]
+    private float m_soulQuotaIncrease;
+    [SerializeField]
+    private GameEvent m_devilScaredImpsEvent;
     private AnimState m_currentAnim;
     private bool m_isPissed;
     private float m_waitTimer;
@@ -32,6 +40,11 @@ public class Devil : MonoBehaviour
         m_isPissed = (m_workingImpList.Count > 0);
         m_currentAnim.Init(transform);
         m_bobAnim.Init(transform);
+    }
+
+    private void OnEnable()
+    {
+        m_evilLaugh.Play();
     }
 
     void Update()
@@ -70,6 +83,8 @@ public class Devil : MonoBehaviour
             m_currentAnim = m_moveToPlayerAnim;
             m_currentAnim.Init(transform);
             m_state = State.ShooAway;
+            m_soulQuota.value += m_soulQuotaIncrease;
+            m_devilScaredImpsEvent.Invoke();
         }
         else
         {
