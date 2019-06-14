@@ -53,8 +53,6 @@ MonoBehaviour:
     m_event: {fileID: 11400000, guid: 6e17b31d2839bd943b3b873a9f6e1b3b, type: 2}
   - m_timeTillBeat: 60
     m_event: {fileID: 11400000, guid: 5ec762b38ba12e3489633e16b0133f4a, type: 2}
-  - m_timeTillBeat: 70
-    m_event: {fileID: 11400000, guid: 346e4db7bf0deb1478aa8bd3184e36ef, type: 2}
 --- !u!114 &6095106891920325996
 MonoBehaviour:
   m_ObjectHideFlags: 0

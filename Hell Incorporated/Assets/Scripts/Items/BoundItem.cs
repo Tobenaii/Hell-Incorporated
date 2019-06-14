@@ -11,6 +11,16 @@ public class BoundItem : MonoBehaviour
     private TimeLerper m_timeLerper;
     private float m_dissolveAmmount;
     private bool m_isHeld = false;
+    private List<Material> m_materials = new List<Material>();
+
+    private void Start()
+    {
+        foreach (Material mat in GetComponent<Renderer>().materials)
+        {
+            m_materials.Add(mat);
+        }
+
+    }
 
     public void Held(bool held)
     {
@@ -37,7 +47,10 @@ public class BoundItem : MonoBehaviour
             if (m_resolve)
             {
                 m_dissolveAmmount = m_timeLerper.Lerp(1, 0, 0.5f);
-                GetComponent<Renderer>().material.SetFloat("_Amount", m_dissolveAmmount);
+                foreach (Material mat in m_materials)
+                {
+                    mat.SetFloat("_Amount", m_dissolveAmmount);
+                }
                 if (m_dissolveAmmount == 0)
                 {
                     m_dissolve = false;
@@ -47,7 +60,10 @@ public class BoundItem : MonoBehaviour
                 return;
             }
             m_dissolveAmmount = m_timeLerper.Lerp(0, 1, 0.5f);
-            GetComponent<Renderer>().material.SetFloat("_Amount", m_dissolveAmmount);
+            foreach (Material mat in m_materials)
+            {
+                mat.SetFloat("_Amount", m_dissolveAmmount);
+            }
             if (m_dissolveAmmount == 1)
             {
                 m_resolve = true;

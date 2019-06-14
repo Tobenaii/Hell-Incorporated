@@ -1512,6 +1512,7 @@ GameObject:
   - component: {fileID: 620097522}
   - component: {fileID: 1762917013}
   - component: {fileID: 1762917014}
+  - component: {fileID: 3299841913034363030}
   m_Layer: 9
   m_Name: PhoneDialogue
   m_TagString: Dialogue
@@ -1576,7 +1577,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc6c3e2f26842f343a968b4b7e63906f, type: 2}
   - {fileID: 11400000, guid: 86b1dcab72addde42a027f4bd4822da3, type: 2}
   - {fileID: 11400000, guid: d35e83f0d20b5ae4e8eaba94b3e9ab29, type: 2}
-  - {fileID: 11400000, guid: 7fbd22dc36d0cb04c9fd7030ebc4158e, type: 2}
   m_phoneRing: {fileID: 156598202}
 --- !u!114 &1996599229
 MonoBehaviour:
@@ -1708,6 +1708,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_phoneRingSound: {fileID: 156598202}
 --- !u!114 &1762917014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996599226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 346e4db7bf0deb1478aa8bd3184e36ef, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1762917013}
+        m_MethodName: Ring
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &3299841913034363030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3330,6 +3359,7 @@ GameObject:
   - component: {fileID: 15760648021244602}
   - component: {fileID: 7956842782865372090}
   - component: {fileID: 1613608332}
+  - component: {fileID: 4699142951675484730}
   m_Layer: 9
   m_Name: Keybord
   m_TagString: Keyboard
@@ -3424,6 +3454,35 @@ MonoBehaviour:
   m_procState: {fileID: 11400000, guid: f0ae1e0d5eefdd44991025f6abbc7601, type: 2}
   m_arrow: {fileID: 2813562591184769124}
 --- !u!114 &1613608332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15760648021244605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 97cd265002ac5364b91fcd95d8d4bd39, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7956842782865372090}
+        m_MethodName: StartTutorialArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &4699142951675484730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6411,10 +6470,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15760648021206737}
     m_Modifications:
-    - target: {fileID: 100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
-      propertyPath: m_Name
-      value: SoulCounter
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6471,6 +6526,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
+      propertyPath: m_Name
+      value: SoulCounter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
 --- !u!4 &4969210828380276133 stripped
@@ -6491,12 +6550,12 @@ PrefabInstance:
       value: Stamp
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6ed6f29c406306346b4ad2e876eb4bdd, type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 6ed6f29c406306346b4ad2e876eb4bdd, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ed6f29c406306346b4ad2e876eb4bdd, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6ed6f29c406306346b4ad2e876eb4bdd, type: 3}
       propertyPath: m_LocalPosition.x
