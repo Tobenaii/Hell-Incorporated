@@ -58,7 +58,6 @@ public class HandPointer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, 1 << 9))
         {
-
             if (hit.transform.CompareTag("Keyboard"))
             {
                 if (!m_keyboardCheck)
@@ -71,13 +70,18 @@ public class HandPointer : MonoBehaviour
 
             else if (m_heldObject == null && OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
             {
-
                 if (hit.transform.CompareTag("StartButton"))
                 {
                     if (m_shiftStarted)
                         return;
                     m_shiftStarted = true;
                     m_startGameEvent.Invoke();
+                    return;
+                }
+
+                if (hit.transform.CompareTag("Phone"))
+                {
+                    hit.transform.GetChild(0).GetComponent<Phone>().OpenDialogue();
                     return;
                 }
 

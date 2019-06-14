@@ -9,6 +9,8 @@ public class Dialogue : MonoBehaviour
     private float m_dialogueSpeed = 0;
     [SerializeField]
     private TextMeshPro m_text = null;
+    [SerializeField]
+    protected GameObject m_dialogueBox;
 
     private bool m_isDialoging;
     private bool m_waitingForPage;
@@ -16,13 +18,15 @@ public class Dialogue : MonoBehaviour
     private int m_currentPage;
     private int m_currentLetter;
     private float m_timer;
+    private DialogueThingy m_currentDialogue;
 
-    public void StartDialogue(string d)
+    public void StartDialogue(DialogueThingy dialogue)
     {
+        m_currentDialogue = dialogue;
         m_text.text = "";
         m_cutDialogue.Clear();
         string page = "";
-        foreach (string word in d.Split(' '))
+        foreach (string word in dialogue.Dialogue.Split(' '))
         {
             if (word == "/page")
             {
@@ -83,11 +87,20 @@ public class Dialogue : MonoBehaviour
         if (m_waitingForPage)
         {
             m_waitingForPage = false;
-            m_text.text = "";
-            m_currentPage++;
             m_currentLetter = 0;
+            m_currentPage++;
+            if (m_currentPage == m_cutDialogue.Count && !m_currentDialogue.CloseOnLastPatge)
+            {
+                m_currentPage--;
+                return;
+            }
+            m_text.text = "";
             if (m_currentPage == m_cutDialogue.Count)
+            {
+                GetComponent<BoxCollider>().enabled = false;
+                m_dialogueBox.SetActive(false);
                 m_isDialoging = false;
+            }
         }
         else
         {

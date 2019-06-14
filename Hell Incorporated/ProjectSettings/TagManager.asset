@@ -15,6 +15,7 @@ TagManager:
   - Item
   - Dialogue
   - StartButton
+  - Phone
   layers:
   - Default
   - TransparentFX

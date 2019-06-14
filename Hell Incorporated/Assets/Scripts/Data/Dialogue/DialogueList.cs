@@ -2,17 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class DialogueThingy
+{
+    [SerializeField]
+    private bool m_closeOnLastPage = true;
+    [SerializeField]
+    private string m_dialogue;
+
+    public string Dialogue { get { return m_dialogue; } private set { } }
+    public bool CloseOnLastPatge { get { return m_closeOnLastPage; } private set { } }
+
+    public DialogueThingy(string d)
+    {
+        m_dialogue = d;
+    }
+}
+
+
 [CreateAssetMenu(menuName = "Dialogue/ListFile")]
+[System.Serializable]
 public class DialogueList : ScriptableObject
 {
     public int Count => m_dialogues.Count;
 
     private enum LineType { LineId, LineStart, LineDialogue};
 
+
     [SerializeField]
     private TextAsset m_dialogueFile = null;
     [SerializeField]
-    private List<string> m_dialogues = new List<string>();
+    private List<DialogueThingy> m_dialogues = new List<DialogueThingy>();
 
     public void LoadDialogueFile()
     {
@@ -49,7 +69,7 @@ public class DialogueList : ScriptableObject
                 case LineType.LineDialogue:
                     if (line == "/break")
                     {
-                        m_dialogues.Add(dialogue);
+                        m_dialogues.Add(new DialogueThingy(dialogue));
                         Debug.Log("Loaded dialogue: " + id);
                         lineType = LineType.LineId;
                         dialogue = "";
@@ -64,10 +84,10 @@ public class DialogueList : ScriptableObject
 #endif
     }
 
-    public string GetDialogue(int index)
+    public DialogueThingy GetDialogue(int index)
     {
         if (index < 0 || index >= m_dialogues.Count)
-            return "Index out of range";
+            return null;
         return m_dialogues[index];
     }
 }
