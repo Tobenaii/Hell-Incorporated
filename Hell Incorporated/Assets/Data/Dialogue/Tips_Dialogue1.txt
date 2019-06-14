@@ -1,0 +1,6 @@
+Tutorial2Text (d.t.2)
+/start
+Attention all employees...
+/page
+Final warning, organs are for eating, not throwing at your co workers. Such distracting behaviour will result in disembowelment.
+/break

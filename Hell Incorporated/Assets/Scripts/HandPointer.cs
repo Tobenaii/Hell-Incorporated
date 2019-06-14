@@ -21,6 +21,7 @@ public class HandPointer : MonoBehaviour
     private Vector3 m_prevObjPos;
     private bool m_keyboardCheck;
     private bool m_shiftStarted;
+    private int m_getRidOfThisKeyboardCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +64,9 @@ public class HandPointer : MonoBehaviour
                 if (!m_keyboardCheck)
                 {
                     m_keyboardEvent.Invoke();
+                    m_getRidOfThisKeyboardCheck++;
+                    if (m_getRidOfThisKeyboardCheck > 5)
+                        hit.transform.GetComponent<Keyboard>().DoneType();
                     m_keyboardCheck = true;
                     m_typeSound.Play();
                 }

@@ -284,6 +284,11 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2108935038613702502, guid: e5404bf55f8f4434c97dffa50fd43bb4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47dc93e9bab61e840a931a2cbd6d0e16, type: 2}
     - target: {fileID: 50140003, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -294,6 +299,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24300002, guid: 4a768acef6f8d0d4798b8a93c7ca9fd7,
         type: 2}
+    - target: {fileID: 1996599228, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: m_dialogueList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996599228, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: m_dialogueSpeed
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996599228, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: m_dialogueList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d35e83f0d20b5ae4e8eaba94b3e9ab29,
+        type: 2}
+    - target: {fileID: 1996599228, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: m_dialogueList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7fbd22dc36d0cb04c9fd7030ebc4158e,
+        type: 2}
+    - target: {fileID: 620097522, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 620097522, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1762917013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5404bf55f8f4434c97dffa50fd43bb4, type: 3}
 --- !u!1001 &544605075
@@ -1323,9 +1354,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1613608327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 15760648021244605, guid: e5404bf55f8f4434c97dffa50fd43bb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 436891889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1613608332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613608327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 97cd265002ac5364b91fcd95d8d4bd39, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7956842782865372090}
+        m_MethodName: StartTutorialArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &1762917004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1996599226, guid: e5404bf55f8f4434c97dffa50fd43bb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 436891889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1762917013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1762917013, guid: e5404bf55f8f4434c97dffa50fd43bb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 436891889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762917004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd62a927f4abce542b41a46ac0f0b1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1762917014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762917004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 346e4db7bf0deb1478aa8bd3184e36ef, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1762917013}
+        m_MethodName: Ring
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &2053190230 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9010267522812844169, guid: 1c7daee1e39298b4399aac889a296553,
     type: 3}
   m_PrefabInstance: {fileID: 780252829}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7956842782865372090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7956842782865372090, guid: e5404bf55f8f4434c97dffa50fd43bb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 436891889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613608327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4784d616946311046b7cb830e0737392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
