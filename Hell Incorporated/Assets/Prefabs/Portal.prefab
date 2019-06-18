@@ -44,13 +44,13 @@ ParticleSystem:
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
-  ringBufferMode: 0
-  ringBufferLoopRange: {x: 0, y: 1}
+  ringBufferMode: 2
+  ringBufferLoopRange: {x: 0, y: 0.1}
   looping: 1
   prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
-  autoRandomSeed: 1
+  autoRandomSeed: 0
   useRigidbodyForVelocity: 1
   startDelay:
     serializedVersion: 2
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -236,7 +236,7 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.99215686, g: 0.12878975, b: 0.011764687, a: 1}
         key1: {r: 0.9813004, g: 0.44728464, b: 0.04861895, a: 1}
-        key2: {r: 0.028301895, g: 0.028221907, b: 0.028168395, a: 1}
+        key2: {r: 0.9245283, g: 0.047970813, b: 0.047970813, a: 1}
         key3: {r: 0.028301895, g: 0.028221907, b: 0.028168395, a: 1}
         key4: {r: 0.028301895, g: 0.028221907, b: 0.028168395, a: 0}
         key5: {r: 0.9813004, g: 0.44728464, b: 0.04861895, a: 0}
