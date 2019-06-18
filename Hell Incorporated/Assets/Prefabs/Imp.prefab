@@ -230,13 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a3614ec20e8cd49972518f5e49613a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_flySpeed: 10
   m_impPool: {fileID: 11400000, guid: 77422b9312a3f4045915f16a1ac9361d, type: 2}
   m_impSpeed: 4
   m_impList: {fileID: 11400000, guid: 48c62e110ed8d32408db63b72a92c16d, type: 2}
   m_workingImpList: {fileID: 11400000, guid: 0fafcd92bcac30b489ffdee8d51a485e, type: 2}
-  m_hellDoor: {fileID: 11400000, guid: 04fdb01d2e4b3ed43a5bd4c6243f8952, type: 2}
-  m_flyToHellAnim: {fileID: 11400000, guid: 441ac7913feff2b4c88c04fd79091335, type: 2}
-  m_scaredToHellAnim: {fileID: 11400000, guid: 1b8d96dd91d9bd740ad6a7297d4eb20c, type: 2}
 --- !u!54 &7497607381287264058
 Rigidbody:
   m_ObjectHideFlags: 0

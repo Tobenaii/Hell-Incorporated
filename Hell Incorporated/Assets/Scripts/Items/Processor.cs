@@ -22,12 +22,13 @@ public class Processor : MonoBehaviour
     protected bool m_hasPaper;
     public bool HasPaper { get { return m_hasPaper; } private set { m_hasPaper = value; } }
 
-    public void StartProcessing(Soul soul)
+    public virtual void StartProcessing(Soul soul)
     {
         m_currentSoul = soul;
         m_paperInstance = m_paperPool.GetObject();
         m_paperInstance.transform.position = m_paperLocation.position;
         m_paperInstance.transform.rotation = m_paperLocation.rotation;
+
         HasPaper = true;
     }
 

@@ -34,7 +34,7 @@ public class Organ : MonoBehaviour
     {
         if (collision.transform.CompareTag("Imp"))
         {
-            collision.transform.GetComponent<Imp>().FindPlayer();
+            collision.transform.GetComponent<Imp>().Fall();
         }
     }
 

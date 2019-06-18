@@ -4,49 +4,47 @@ using UnityEngine;
 
 public abstract class ListSet<T> : ScriptableObject
 {
-    [SerializeField]
-    private List<T> list = new List<T>();
-    public IReadOnlyList<T> List { get { return list.AsReadOnly(); } private set { } }
+    public List<T> List = new List<T>();
 
-    public int Count => list.Count;
+    public int Count => List.Count;
 
     private void OnDisable()
     {
-        list.Clear();
+        List.Clear();
     }
 
     private void OnEnable()
     {
-        list.Clear();
+        List.Clear();
     }
 
     public bool Containts (T obj)
     {
-        return list.Contains(obj);
+        return List.Contains(obj);
     }
 
     public void Add(T obj)
     {
-        list.Add(obj);
+        List.Add(obj);
     }
 
     public void Remove(T obj)
     {
-        list.Remove(obj);
+        List.Remove(obj);
     }
 
     public void RemoveAt(int index)
     {
-        list.RemoveAt(index);
+        List.RemoveAt(index);
     }
 
     public void Insert(int index, T obj)
     {
-        list.Insert(index, obj);
+        List.Insert(index, obj);
     }
 
     public void Clear()
     {
-        list.Clear();
+        List.Clear();
     }
 }

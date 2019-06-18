@@ -5,147 +5,87 @@ using static OVRInput;
 
 public class HandPointer : MonoBehaviour
 {
-    [SerializeField]
-    private GameEvent m_keyboardEvent = null;
-    [SerializeField]
-    private GameObjectListSet m_workingImpList;
-    [SerializeField]
-    private GameObjectPool m_organPool;
-    [SerializeField]
-    private AudioSource m_typeSound;
-    [SerializeField]
-    private GameEvent m_startGameEvent;
     private LineRenderer m_line;
-    private Transform m_heldObject;
-    private Transform m_originParent;
-    private Vector3 m_prevObjPos;
-    private bool m_keyboardCheck;
-    private bool m_shiftStarted;
-    private int m_getRidOfThisKeyboardCheck;
+    private GameObject m_heldObject;
+    private List<Interactable> m_interacts = new List<Interactable>();
+    private List<Interactable> m_hoverInteracts = new List<Interactable>();
+    private GameObject m_previousHoverObject;
 
     // Start is called before the first frame update
     void Start()
     {
         m_line = GetComponent<LineRenderer>();
-        m_keyboardCheck = false;
     }
 
-    private void PickupObject(GameObject obj)
+    private void OnClick(GameObject obj)
     {
-        m_originParent = obj.transform.parent;
-        obj.transform.SetParent(transform);
-        obj.transform.GetComponent<Rigidbody>().freezeRotation = true;
-        m_heldObject = obj.transform;
+        if (m_interacts.Count == 0)
+            return;
+        //Call OnClick on the interactable scripts
+        m_heldObject = obj;
+        foreach (Interactable interact in m_interacts)
+            interact.OnClick(gameObject);        
         m_line.enabled = false;
     }
 
-    public void LetGo()
+    public void OnRelease()
     {
-        m_heldObject.transform.parent = m_originParent;
-        m_heldObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //Call OnRelease on the interactable scripts
+        foreach (Interactable interact in m_interacts)
+            interact.OnRelease(gameObject);
+        m_interacts.Clear();
         m_heldObject = null;
         m_line.enabled = true;
     }
 
-    // Update is called once per frame
+    private void OnHoverEnter(GameObject obj)
+    {
+        foreach (Interactable interact in m_hoverInteracts)
+            interact.OnHoverEnter(gameObject);
+    }
+
     void Update()
     {
+        //Create a ray from the pointer position towards it's forward vector
         Ray ray = new Ray(transform.position - transform.forward * 0.1f, transform.forward);
+
 #if UNITY_EDITOR
+        //If we're in the unity editor we need to account for the mouse position
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         transform.LookAt((ray.origin - transform.forward * 0.1f) + ray.direction * 500);
 #endif
+
         m_line.SetPosition(0, ray.origin);
+        //Check for raycast hit on Interactable objects
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, 1 << 9))
         {
-            if (hit.transform.CompareTag("Keyboard"))
+            if (m_previousHoverObject != hit.transform.gameObject)
             {
-                if (!m_keyboardCheck)
-                {
-                    m_keyboardEvent.Invoke();
-                    m_getRidOfThisKeyboardCheck++;
-                    if (m_getRidOfThisKeyboardCheck > 5)
-                        hit.transform.GetComponent<Keyboard>().DoneType();
-                    m_keyboardCheck = true;
-                    m_typeSound.Play();
-                }
+                m_hoverInteracts = new List<Interactable>(hit.transform.GetComponents<Interactable>());
+                OnHoverEnter(hit.transform.gameObject);
+                m_hoverInteracts.Clear();
             }
-
-            else if (m_heldObject == null && OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
+            m_previousHoverObject = hit.transform.gameObject;
+            if (OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
             {
-                if (hit.transform.CompareTag("StartButton"))
-                {
-                    if (m_shiftStarted)
-                        return;
-                    m_shiftStarted = true;
-                    m_startGameEvent.Invoke();
-                    return;
-                }
-
-                if (hit.transform.CompareTag("Phone"))
-                {
-                    hit.transform.GetChild(0).GetComponent<Phone>().OpenDialogue();
-                    return;
-                }
-
-                hit.transform.GetComponent<BoundItem>()?.Held(true);
-                if (hit.transform.CompareTag("Imp"))
-                {
-                    if (m_workingImpList.Containts(hit.transform.gameObject))
-                    {
-                        hit.transform.GetComponent<Imp>().FlyAway();
-                    }
-                }
-                else if (hit.transform.CompareTag("OrganSpawn"))
-                {
-                    GameObject organ = m_organPool.GetObject();
-                    organ.transform.position = hit.transform.position;
-                    //organ.transform.SetParent(GameObject.Find("Fix").transform);
-                    PickupObject(organ);
-                }
-                else if (hit.transform.CompareTag("Dialogue"))
-                {
-                    hit.transform.GetComponent<Dialogue>().OnClick();
-                }
-                else
-                {
-                    PickupObject(hit.transform.gameObject);
-                }
+                m_interacts = new List<Interactable>(hit.transform.GetComponents<Interactable>());
+                OnClick(hit.transform.gameObject);
             }
             m_line.SetPosition(1, hit.point);
         }
         else
         {
+            m_previousHoverObject = null;
             m_line.SetPosition(1, ray.origin + ray.direction * 500);
-            m_keyboardCheck = false;
         }
+
         if (m_heldObject != null)
         {
-            Vector3 direction = transform.position + transform.forward * 0.2f - m_heldObject.transform.position;
-
-#if UNITY_EDITOR
-            direction = transform.position + transform.forward * 0.5f - m_heldObject.transform.position;
-#endif
-            m_heldObject.GetComponent<Rigidbody>().velocity = direction * 10;
             if (OVRInput.GetUp(Button.PrimaryIndexTrigger) || Input.GetMouseButtonUp(0))
-            {
-                BoundItem item = m_heldObject.GetComponent<BoundItem>();
-                if (item != null)
-                {
-                    item.Dissolve();
-                    item.Held(false);
-                }
-                direction = m_heldObject.transform.position - m_prevObjPos;
-                float force = 40 * Vector3.Magnitude(direction);
-                if (force > 200)
-                    force = 200;
-                m_heldObject.GetComponent<Rigidbody>().AddForce(Vector3.Normalize(transform.up * -1 + transform.forward) * force, ForceMode.Impulse);
-                m_heldObject.GetComponent<Rigidbody>().freezeRotation = false;
-                LetGo();
-            }
+                OnRelease();
         }
-        if (m_heldObject != null)
-            m_prevObjPos = m_heldObject.transform.position;
+        foreach (Interactable interact in m_interacts)
+            interact.OnHeld(gameObject);
     }
 }

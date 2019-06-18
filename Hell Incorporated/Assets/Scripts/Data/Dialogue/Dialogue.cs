@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour
+public class Dialogue : Interactable
 {
     [SerializeField]
     private float m_dialogueSpeed = 0;
@@ -18,7 +18,7 @@ public class Dialogue : MonoBehaviour
     private int m_currentPage;
     private int m_currentLetter;
     private float m_timer;
-    private DialogueThingy m_currentDialogue;
+    private DialogueData m_currentDialogue;
 
     public void CloseDialogue()
     {
@@ -28,13 +28,20 @@ public class Dialogue : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
     }
 
-    public void StartDialogue(DialogueThingy dialogue)
+    public void StartDialogue(DialogueData data)
     {
-        m_currentDialogue = dialogue;
+        m_dialogueBox.SetActive(true);
+        Debug.Log("Pick up the phone ya fucking donkey cunt");
+        m_currentDialogue = data;
+        StartDialogue();
+    }
+
+    private void StartDialogue()
+    {
         m_text.text = "";
         m_cutDialogue.Clear();
         string page = "";
-        foreach (string word in dialogue.Dialogue.Split(' '))
+        foreach (string word in m_currentDialogue.Dialogue.Split(' '))
         {
             if (word == "/page")
             {
@@ -88,21 +95,22 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    public void OnClick()
+    public override void OnClick(GameObject hand)
     {
+        base.OnClick(hand);
         if (!m_isDialoging)
             return;
         if (m_waitingForPage)
         {
             m_waitingForPage = false;
             m_currentPage++;
-            if (m_currentDialogue.CloseOnLastPatge || m_currentPage < m_cutDialogue.Count)
+            if (m_currentDialogue.CloseOnLastPage || m_currentPage < m_cutDialogue.Count)
                 m_text.text = "";
             m_currentLetter = 0;
             if (m_currentPage == m_cutDialogue.Count)
             {
                 GetComponent<BoxCollider>().enabled = false;
-                if (m_currentDialogue.CloseOnLastPatge)
+                if (m_currentDialogue.CloseOnLastPage)
                 {
                     m_dialogueBox.SetActive(false);
                 }

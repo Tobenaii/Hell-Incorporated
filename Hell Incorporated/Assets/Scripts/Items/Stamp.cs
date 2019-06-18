@@ -5,66 +5,32 @@ using UnityEngine;
 public class Stamp : Item
 {
     [SerializeField]
-    private GameEvent m_stampEvent = null;
-    [SerializeField]
     private float m_rotationSpeed = 0;
     [SerializeField]
     private AudioSource m_stampAudio;
     [SerializeField]
     private GameEvent m_tutorialEvent;
-    [SerializeField]
-    private GameEvent m_startGameEvent;
-    private bool m_gameStarted;
-    private bool m_autoStamp;
-    private BoundItem m_boundItem;
 
-    private void Start()
+    public override void DoAction()
     {
-        m_boundItem = transform.parent.GetComponent<BoundItem>();
-    }
-
-    public void ToggleAutoStamp()
-    {
-        m_autoStamp = !m_autoStamp;
-    }
-
-    private void Update()
-    {
-        m_boundItem.enabled = !m_autoStamp;
-
-        if (m_tut)
-        {
-            if (m_procState.state == ProcState.ProcessorState.Stamp)
-            {
-                m_arrow.SetActive(true);
-                m_tut = false;
-            }
-        }
-    }
-
-    public void StampPaper()
-    {
-        m_stampEvent.Invoke();
-        m_procState.state = ProcState.ProcessorState.Scan;
+        m_actionEvent.Invoke();
+        m_procState.state = ProcState.ProcessorState.None;
         m_stampAudio.Play();
-        m_arrow.SetActive(false);
+        if (m_inTutorial)
+        {
+            m_arrow.SetActive(false);
+            m_tutorialDoneEvent.Invoke();
+            m_inTutorial = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (m_autoStamp)
-            return;
         if (m_procState.state != ProcState.ProcessorState.Stamp)
             return;
         if (other.transform.CompareTag("StampArea"))
         {
-            StampPaper();
-            m_tutorialEvent.Invoke();
-            if (!m_gameStarted)
-            {
-                m_startGameEvent.Invoke();
-                m_gameStarted = true;
-            }
+            DoAction();
         }
     }
 

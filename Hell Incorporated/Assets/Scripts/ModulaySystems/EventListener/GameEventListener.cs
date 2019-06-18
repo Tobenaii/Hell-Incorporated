@@ -43,6 +43,8 @@ public class GameEventListener : MonoBehaviour
     {
         if (gameEvent == null)
             Debug.Log(gameObject.name);
+        if (gameEvent == null)
+            Debug.Log("Null Event at " + gameObject.name);
         gameEvent.AttachListener(this);
     }
 

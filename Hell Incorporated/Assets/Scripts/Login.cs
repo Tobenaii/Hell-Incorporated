@@ -2,38 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Login : MonoBehaviour
+public class Login : Interactable
 {
     [SerializeField]
-    private PlayerProcessor m_playerProc;
+    private GameEvent m_scanDialogueEvent;
     [SerializeField]
-    private GameObject m_tutorial;
+    private Renderer m_screenRenderer;
     [SerializeField]
-    private GameObject m_gameBeats;
-    [SerializeField]
-    private GameObject m_screen;
-    [SerializeField]
-    private Material m_loginMat;
-    [SerializeField]
-    private Material m_processingMat;
+    private Material m_gameScreenMaterial;
+    private Material m_welcomeMaterial;
 
-    public void StartGame()
+    private void Awake()
     {
-        m_playerProc.InitPlayer();
-        m_screen.GetComponent<Renderer>().material = m_processingMat;
-        Instantiate(m_gameBeats);
-        Instantiate(m_tutorial);
+        m_welcomeMaterial = m_screenRenderer.material;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public override void OnClick(GameObject hand)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.OnClick(hand);
+        m_screenRenderer.material = m_gameScreenMaterial;
+        m_scanDialogueEvent.Invoke();
     }
 }

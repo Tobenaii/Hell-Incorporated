@@ -59,7 +59,7 @@ public class GameObjectPool : ScriptableObject
             Reset();
         }
         //Kick the gameObject out of the house and chuck into the big cruel world after preparing it :(
-        pool.Peek().transform.SetParent(null);
+        pool.Peek().transform.SetParent(parent);
         pool.Peek().gameObject.SetActive(true);
         return pool.Pop();
     }

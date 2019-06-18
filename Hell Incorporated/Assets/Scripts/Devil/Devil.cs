@@ -63,9 +63,7 @@ public class Devil : MonoBehaviour
                     break;
                 case State.ShooAway:
                     for (int i = 0; i < m_workingImpList.Count; i++)
-                    {
-                        m_workingImpList.List[i].GetComponent<Imp>().FlyAway();
-                    }
+                        m_workingImpList.List[i].GetComponent<Imp>().OnClick(gameObject);
                     LookForStuffToGetAngryAbout();
                     break;
                 case State.MoveIntoPortal:
