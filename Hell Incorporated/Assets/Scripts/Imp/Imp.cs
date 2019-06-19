@@ -57,6 +57,11 @@ public class Imp : Interactable
 
     public override void OnClick(GameObject hand)
     {
+        FlyAway();
+    }
+
+    public void FlyAway()
+    {
         if (!m_isWorking)
             return;
         for (int i = 0; i < 3; i++)

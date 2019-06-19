@@ -10,7 +10,7 @@ public class SoulCounter : MonoBehaviour
     [SerializeField]
     private FloatValue m_quota;
 
-    public void UpdateQuota()
+    private void Update()
     {
         m_text.text = m_quota.value.ToString();
     }
