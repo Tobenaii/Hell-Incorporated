@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8680236546396059204}
   - component: {fileID: 3144069837045447791}
   - component: {fileID: 2573580212325652522}
+  - component: {fileID: 1781921003591112612}
   m_Layer: 9
   m_Name: Lungs
   m_TagString: Untagged
@@ -142,3 +143,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_imps: {fileID: 11400000, guid: 48c62e110ed8d32408db63b72a92c16d, type: 2}
+--- !u!114 &1781921003591112612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718488249757018941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532b94be77f0e6b418cdba15c2bba0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pool: {fileID: 11400000, guid: 0291c34fd03b63e4a9ea67c30d5a0a06, type: 2}
+  m_lifeTime: 30

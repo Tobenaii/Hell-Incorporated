@@ -65,7 +65,7 @@ public class Pickup : Interactable
 #if UNITY_EDITOR
         direction = hand.transform.position + hand.transform.forward * 0.5f - transform.position;
 #endif
-        m_rb.velocity = direction * 10;
+        m_rb.velocity = direction * 15;
         m_prevHandPos = hand.transform.position;
     }
 }

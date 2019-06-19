@@ -12,6 +12,7 @@ public class OrganBin : Interactable
     public override void OnClick(GameObject hand)
     {
         int index = Random.Range(0, m_organPools.Count);
+        m_curOrgan?.OnRelease(hand);
         Pickup organ = m_organPools[index].GetObject().GetComponent<Pickup>();
         organ.transform.SetParent(null);
         organ.transform.position = hand.transform.position + hand.transform.forward;

@@ -7,6 +7,8 @@ public class Keyboard : Item
 {
     [SerializeField]
     private TextMeshPro m_text;
+    [SerializeField]
+    private AudioSource m_audio;
     private int m_typeIndex;
 
     public void ScannedNameData()
@@ -18,6 +20,7 @@ public class Keyboard : Item
     {
         m_text.text = "";
     }
+
     public void DoneType()
     {
         m_procState.state = ProcState.ProcessorState.Stamp;
@@ -33,6 +36,7 @@ public class Keyboard : Item
 
     public override void DoAction()
     {
+        m_audio.Play();
         if (m_procState.state != ProcState.ProcessorState.Type)
             return;
         if (m_typeIndex == 5)

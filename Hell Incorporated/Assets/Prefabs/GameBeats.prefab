@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6095106891920325995}
   - component: {fileID: 6095106891920325994}
   - component: {fileID: 6095106891920325996}
+  - component: {fileID: 779171581}
+  - component: {fileID: 779171583}
   m_Layer: 0
   m_Name: GameBeats
   m_TagString: Untagged
@@ -48,11 +50,13 @@ MonoBehaviour:
   m_gameTimer: {fileID: 11400000, guid: 538e7137a598c194cb49406e7d9626a8, type: 2}
   m_beats:
   - m_timeTillBeat: 20
-    m_event: {fileID: 11400000, guid: cc7380cbfdaded74a80398c5b19fb81a, type: 2}
+    m_event: {fileID: 11400000, guid: 8bdea7f1fa45b1d4fa9f2d27965f7e7e, type: 2}
   - m_timeTillBeat: 40
-    m_event: {fileID: 11400000, guid: 6e17b31d2839bd943b3b873a9f6e1b3b, type: 2}
+    m_event: {fileID: 11400000, guid: 4b13f6a03bc4d5f4a8efbcf74368c510, type: 2}
   - m_timeTillBeat: 60
-    m_event: {fileID: 11400000, guid: 5ec762b38ba12e3489633e16b0133f4a, type: 2}
+    m_event: {fileID: 11400000, guid: ab95d3c9bc1988a4ab64d3f4d4a1e166, type: 2}
+  - m_timeTillBeat: 480
+    m_event: {fileID: 11400000, guid: 346e4db7bf0deb1478aa8bd3184e36ef, type: 2}
 --- !u!114 &6095106891920325996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,12 +69,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: bc59a628ce137ad4a8f79114b0201e3d, type: 2}
+  gameEvent: {fileID: 11400000, guid: ec140899130b83b4c84b49fbc0af7a88, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6095106891920325994}
         m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &779171581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095106891920325993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 12e988484571ae542bab0f797d50c8a6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6095106891920325994}
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &779171583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095106891920325993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 346e4db7bf0deb1478aa8bd3184e36ef, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6095106891920325994}
+        m_MethodName: StopGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

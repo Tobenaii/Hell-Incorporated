@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4629825259862201225}
   - component: {fileID: 3833333457073660649}
   - component: {fileID: 2667405765413609833}
+  - component: {fileID: 2961957961210688036}
   m_Layer: 9
   m_Name: Kidney
   m_TagString: Untagged
@@ -142,3 +143,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_imps: {fileID: 11400000, guid: 48c62e110ed8d32408db63b72a92c16d, type: 2}
+--- !u!114 &2961957961210688036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477122843866804678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532b94be77f0e6b418cdba15c2bba0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pool: {fileID: 11400000, guid: d0eea2c9fa9944a4f8c94058f0525935, type: 2}
+  m_lifeTime: 30
