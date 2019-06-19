@@ -5,7 +5,7 @@ using UnityEngine;
 public class Processor : MonoBehaviour
 {
     [SerializeField]
-    private ProcessorListSet m_procListSet = null;
+    protected ProcessorListSet m_procListSet = null;
     [SerializeField]
     private GameObjectPool m_paperPool = null;
     [SerializeField]

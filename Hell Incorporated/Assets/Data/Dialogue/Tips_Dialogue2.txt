@@ -1,6 +1,1 @@
-Tutorial3Text (d.t.3)
-/start
-Attention all employees...
-/page
-If anyone wants to know why Jeffery didn't come into work today, the devil is pulling his tongue out through his belly button after he was caught bribing the imps with organs to do his work.
-/break
+Attention all employees... /page If anyone wants to know why Jeffery didn't come into work today, the devil is pulling his tongue out through his belly button after he was caught bribing the imps with organs to do his work.

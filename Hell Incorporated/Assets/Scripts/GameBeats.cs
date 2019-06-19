@@ -12,6 +12,11 @@ class BeatData
 
     private bool m_invoked = false;
 
+    public void Reset()
+    {
+        m_invoked = false;
+    }
+
     public void Invoke(float gameTime)
     {
         if (gameTime < m_timeTillBeat)
@@ -33,6 +38,19 @@ public class GameBeats : MonoBehaviour
     private List<BeatData> m_beats;
 
     private bool m_gameStarted;
+
+    public void RestartGame()
+    {
+        m_gameTimer.value = 0;
+        m_gameStarted = true;
+        foreach (BeatData beat in m_beats)
+            beat.Reset();
+    }
+
+    public void StopGame()
+    {
+        m_gameStarted = false;
+    }
 
     public void StartGame()
     {

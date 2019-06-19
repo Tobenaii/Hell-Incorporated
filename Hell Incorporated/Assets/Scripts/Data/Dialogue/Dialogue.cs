@@ -38,6 +38,7 @@ public class Dialogue : Interactable
 
     private void StartDialogue()
     {
+        GetComponent<BoxCollider>().enabled = true;
         m_text.text = "";
         m_cutDialogue.Clear();
         string page = "";

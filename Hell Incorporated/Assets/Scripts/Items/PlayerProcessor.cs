@@ -13,6 +13,18 @@ public class PlayerProcessor : Processor
 
     private void Start()
     {
+        m_soulQuota.value = m_initSoulQuota;
+    }
+
+    public void Restart()
+    {
+        m_soulQuota.value = m_initSoulQuota;
+        m_procListSet.Add(this);
+    }
+
+    public void DisableProcessor()
+    {
+        m_procListSet.Remove(this);
     }
 
     public override void StartProcessing(Soul soul)

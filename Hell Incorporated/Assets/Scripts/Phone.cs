@@ -16,6 +16,7 @@ public class Phone : Interactable
     {
         m_phoneRingSound.Play();
         m_currentDialogueData = dList;
+        m_animator.ResetTrigger("Stop");
         m_animator.SetTrigger("Vibrate");
     }
 
@@ -27,12 +28,17 @@ public class Phone : Interactable
         OpenDialogue(m_currentDialogueData);
         m_currentDialogueData = null;
     }
-
-    public void OpenDialogue(DialogueData data)
+    public void StopPhone()
     {
         m_phoneRingSound.Stop();
         m_animator.SetTrigger("Stop");
-        m_dialogue.StartDialogue(data);
+        m_animator.ResetTrigger("Vibrate");
         m_currentDialogueData = null;
+    }
+
+    public void OpenDialogue(DialogueData data)
+    {
+        StopPhone();
+        m_dialogue.StartDialogue(data);
     }
 }
