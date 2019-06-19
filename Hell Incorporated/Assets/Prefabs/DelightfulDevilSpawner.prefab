@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 981476080797918309}
   - component: {fileID: 981476080797918308}
-  - component: {fileID: 981476080797918310}
+  - component: {fileID: 536211498}
   m_Layer: 0
   m_Name: DelightfulDevilSpawner
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_spawnInterval: 30
   m_devilPrefab: {fileID: 5680510240481377924, guid: caf324654ee030a40be2cf494dbc7602,
     type: 3}
---- !u!114 &981476080797918310
+--- !u!114 &536211498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 5ec762b38ba12e3489633e16b0133f4a, type: 2}
+  gameEvent: {fileID: 11400000, guid: ec140899130b83b4c84b49fbc0af7a88, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:

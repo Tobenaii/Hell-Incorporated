@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5680510240481377946}
   - component: {fileID: 1290461126}
+  - component: {fileID: 975857882}
   m_Layer: 0
   m_Name: Devil
   m_TagString: Untagged
@@ -47,15 +48,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_workingImpList: {fileID: 11400000, guid: 0fafcd92bcac30b489ffdee8d51a485e, type: 2}
   m_playerProc: {fileID: 11400000, guid: 1e7aa928ab5d746418ed6db479d97fb6, type: 2}
-  m_moveOutPortalAnim: {fileID: 0}
-  m_lookAroundAnim: {fileID: 0}
-  m_bobAnim: {fileID: 0}
-  m_moveBackIntoPortalAnim: {fileID: 0}
-  m_moveToPlayerAnim: {fileID: 0}
   m_evilLaugh: {fileID: 6823803742096835846}
   m_soulQuota: {fileID: 11400000, guid: 1a8914b8e80c8734d96bdc10ed1f0fb2, type: 2}
   m_soulQuotaIncrease: 10
   m_devilScaredImpsEvent: {fileID: 0}
+  m_animator: {fileID: 975857882}
+--- !u!95 &975857882
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680510240481377924}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 484ac004f1f56374c9de337216daedc8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8482818055901765606
 GameObject:
   m_ObjectHideFlags: 0
