@@ -45,6 +45,12 @@ public class DevilSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!m_canSpawn)
+            return;
+
+        if (m_devilInScene)
+            return;
+
         if (m_wait)
         {
             m_waitTimer -= Time.deltaTime;
@@ -55,11 +61,7 @@ public class DevilSpawner : MonoBehaviour
             return;
         }
 
-        if (!m_canSpawn)
-            return;
 
-        if (m_devilInScene)
-            return;
 
         m_timer -= Time.deltaTime;
         m_spawnChance = m_lerper.Lerp(0, 1000, m_maxTime);
