@@ -22,7 +22,7 @@ public class Organ : MonoBehaviour
             if (speed > 5)
             {
                 Vector3 dirToImp = imp.transform.position - transform.position;
-                if (Vector3.Dot(dirToImp.normalized, m_rb.velocity.normalized) > 0.8f)
+                if (Vector3.Dot(dirToImp.normalized, m_rb.velocity.normalized) > 0.85f)
                 {
                     m_rb.velocity = dirToImp.normalized * speed;
                 }

@@ -8730,6 +8730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brain
       objectReference: {fileID: 0}
+    - target: {fileID: 4637844317412008799, guid: 9eab43edde9a0af41948a0fc513f6e64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4637844317412507519, guid: 9eab43edde9a0af41948a0fc513f6e64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8800,7 +8805,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 79.464264
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3054622117556938730, guid: 9eab43edde9a0af41948a0fc513f6e64, type: 3}
+    - {fileID: 5548929566538662434, guid: 9eab43edde9a0af41948a0fc513f6e64, type: 3}
+    - {fileID: 5555220489410872475, guid: 9eab43edde9a0af41948a0fc513f6e64, type: 3}
+    - {fileID: 5013645533054300008, guid: 9eab43edde9a0af41948a0fc513f6e64, type: 3}
+    - {fileID: 3874449266625987448, guid: 9eab43edde9a0af41948a0fc513f6e64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9eab43edde9a0af41948a0fc513f6e64, type: 3}
 --- !u!4 &5760360191461317538 stripped
 Transform:
@@ -9227,6 +9237,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15760648021206691}
     m_Modifications:
+    - target: {fileID: 100000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
+      propertyPath: m_Name
+      value: Mouse
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.9091644
@@ -9283,10 +9297,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
-      propertyPath: m_Name
-      value: Mouse
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
 --- !u!4 &4032942149346667261 stripped
@@ -9302,6 +9312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15760648021206737}
     m_Modifications:
+    - target: {fileID: 100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
+      propertyPath: m_Name
+      value: SoulCounter
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9357,10 +9371,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
-      propertyPath: m_Name
-      value: SoulCounter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
@@ -9644,6 +9654,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heart
       objectReference: {fileID: 0}
+    - target: {fileID: 7290436746868288804, guid: 6cb6b15fabb9a424caf15557401e0cf0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7290436746868584708, guid: 6cb6b15fabb9a424caf15557401e0cf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9911,6 +9926,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kidney
       objectReference: {fileID: 0}
+    - target: {fileID: 1477122843866804678, guid: 68640249b0def1b49a68496e78dea37c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1477122843866836454, guid: 68640249b0def1b49a68496e78dea37c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9981,7 +10001,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 79.464264
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4629825259862201225, guid: 68640249b0def1b49a68496e78dea37c, type: 3}
+    - {fileID: 2667405765413609833, guid: 68640249b0def1b49a68496e78dea37c, type: 3}
+    - {fileID: 2961957961210688036, guid: 68640249b0def1b49a68496e78dea37c, type: 3}
+    - {fileID: 3833333457073660649, guid: 68640249b0def1b49a68496e78dea37c, type: 3}
+    - {fileID: 4249022833797444616, guid: 68640249b0def1b49a68496e78dea37c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68640249b0def1b49a68496e78dea37c, type: 3}
 --- !u!4 &8306184196381657770 stripped
 Transform:
@@ -10222,6 +10247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heart (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7290436746868288804, guid: 6cb6b15fabb9a424caf15557401e0cf0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7290436746868584708, guid: 6cb6b15fabb9a424caf15557401e0cf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10292,7 +10322,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 33.665035
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 786816575514404256, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 786816575514404256, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 2454558065146266086, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 2454558065146266086, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 3878748847456970780, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 3878748847456970780, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 2399070963567627488, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 2399070963567627488, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 510839436731295000, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
+    - {fileID: 510839436731295000, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6cb6b15fabb9a424caf15557401e0cf0, type: 3}
 --- !u!4 &1481615622407691091 stripped
 Transform:

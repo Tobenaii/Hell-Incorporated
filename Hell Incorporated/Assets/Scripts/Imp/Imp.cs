@@ -36,6 +36,7 @@ public class Imp : Interactable
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().useGravity = false;
         transform.rotation = Quaternion.identity;
+        GetComponent<Collider>().isTrigger = false;
     }
 
     private void OnEnable()
@@ -68,13 +69,13 @@ public class Imp : Interactable
         {
             if (m_workingImpList.List[i] == gameObject)
             {
+                GetComponent<Collider>().isTrigger = true;
                 m_workingImpList.List[i] = null;
-                break;
+                m_isFlying = true;
+                m_isWorking = false;
+                return;
             }
         }
-        transform.position += Vector3.up * 2;
-        m_isFlying = true;
-        m_isWorking = false;
     }
 
     void Update()
@@ -82,7 +83,7 @@ public class Imp : Interactable
         if (!m_isFlying)
             return;
 
-        transform.position += Vector3.left * m_flySpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(-12.4f, 5, 0), m_flySpeed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
             Fall();
@@ -112,6 +113,7 @@ public class Imp : Interactable
                     return;
                 }
             }
+            m_impPool.DestroyObject(gameObject);
         }
     }
 
