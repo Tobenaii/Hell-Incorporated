@@ -20,10 +20,7 @@ public class Scanner : Item
             return;
         if (other.transform.CompareTag("Paper"))
         {
-            Quaternion q = Quaternion.Euler(180, 0, -90);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, m_rotationSpeed);
-            if (transform.rotation == q)
-                DoAction();
+            DoAction();
         }
     }
 
