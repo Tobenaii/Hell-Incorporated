@@ -9,9 +9,6 @@ public class DevilSpawner : MonoBehaviour
     [SerializeField]
     private float m_spawnInterval;
     private float m_spawnChance;
-    [SerializeField]
-    private GameObject m_devilPrefab;
-    private GameObject m_devilInstance;
     private bool m_devilInScene;
     private float m_timer;
     private bool m_canSpawn;
@@ -22,8 +19,6 @@ public class DevilSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_devilInstance = Instantiate(m_devilPrefab, transform);
-        m_devilInstance.SetActive(false);
         m_timer = 1;
         m_canSpawn = false;
         m_lerper = new TimeLerper();
@@ -32,15 +27,19 @@ public class DevilSpawner : MonoBehaviour
     public void StartDevil()
     {
         m_canSpawn = true;
+        m_waitTimer = m_spawnInterval;
     }
     void SpawnDevil()
     {
-        m_devilInstance.transform.localPosition = Vector3.zero;
-        m_devilInstance.transform.localRotation = Quaternion.identity;
-        m_devilInstance.SetActive(true);
-        m_devilInstance.GetComponent<Devil>().Init();
+        GetComponent<Devil>().Init();
         m_timer = 1;
         m_wait = true;
+    }
+
+    public void DevilFinished()
+    {
+        m_devilInScene = false;
+        m_waitTimer = m_spawnInterval;
     }
 
     // Update is called once per frame
@@ -52,14 +51,12 @@ public class DevilSpawner : MonoBehaviour
             if (m_waitTimer <= 0)
             {
                 m_wait = false;
-                m_waitTimer = m_spawnInterval;
             }
             return;
         }
 
         if (!m_canSpawn)
             return;
-        m_devilInScene = m_devilInstance.activeSelf;
 
         if (m_devilInScene)
             return;
@@ -75,6 +72,7 @@ public class DevilSpawner : MonoBehaviour
                 Debug.Log(m_spawnChance);
                 m_lerper.Reset();
                 SpawnDevil();
+                m_devilInScene = true;
             }
             m_timer = 1;
         }
