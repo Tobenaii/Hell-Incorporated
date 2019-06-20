@@ -9227,10 +9227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15760648021206691}
     m_Modifications:
-    - target: {fileID: 100000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
-      propertyPath: m_Name
-      value: Mouse
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.9091644
@@ -9287,6 +9283,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
+      propertyPath: m_Name
+      value: Mouse
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66cb55834628ac14194de192017b0a81, type: 3}
 --- !u!4 &4032942149346667261 stripped
@@ -9302,10 +9302,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15760648021206737}
     m_Modifications:
-    - target: {fileID: 100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
-      propertyPath: m_Name
-      value: SoulCounter
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9361,6 +9357,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
+      propertyPath: m_Name
+      value: SoulCounter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fb496bd88da4b84fb11f8f77bdf4aab, type: 3}
@@ -10147,6 +10147,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 95692966394735431, guid: baf7eafc3df46004aabf42594456797f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ebd504b49244dda4b9ba6218c95681ac, type: 2}
     - target: {fileID: 5700100495276363823, guid: baf7eafc3df46004aabf42594456797f,
         type: 3}
       propertyPath: m_Enabled
@@ -10162,6 +10167,11 @@ PrefabInstance:
       propertyPath: m_arrow
       value: 
       objectReference: {fileID: 1721138647}
+    - target: {fileID: 5131378773578186891, guid: baf7eafc3df46004aabf42594456797f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf7eafc3df46004aabf42594456797f, type: 3}
 --- !u!95 &2404278665414003238 stripped
