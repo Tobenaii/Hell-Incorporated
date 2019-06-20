@@ -45,7 +45,7 @@ public class Pickup : Interactable
         float force = 40 * Vector3.Magnitude(forceDir);
         if (force > 200)
             force = 200;
-        m_rb.AddForce(Vector3.Normalize(hand.transform.up * -1 + hand.transform.forward) * force, ForceMode.Impulse);
+        m_rb.AddForce(Vector3.Normalize(hand.transform.up * -1 + hand.transform.forward * 0.5f) * force, ForceMode.Impulse);
     }
 
     public void OnDisable()

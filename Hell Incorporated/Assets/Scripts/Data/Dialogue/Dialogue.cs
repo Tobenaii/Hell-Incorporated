@@ -31,7 +31,6 @@ public class Dialogue : Interactable
     public void StartDialogue(DialogueData data)
     {
         m_dialogueBox.SetActive(true);
-        Debug.Log("Pick up the phone ya fucking donkey cunt");
         m_currentDialogue = data;
         StartDialogue();
     }
