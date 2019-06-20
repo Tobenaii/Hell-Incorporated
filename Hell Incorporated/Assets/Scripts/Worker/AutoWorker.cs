@@ -59,9 +59,10 @@ public class AutoWorker : MonoBehaviour
     private IEnumerator GetImp()
     {
         GameObject imp = m_workingImpList.List[m_workerIndex];
+        imp.transform.rotation = transform.rotation;
         while (Vector3.Distance(imp.transform.position, transform.position) > 0.005f)
         {
-            imp.transform.position = Vector3.MoveTowards(imp.transform.position, transform.position, 10 * Time.deltaTime);
+            imp.transform.position = Vector3.MoveTowards(imp.transform.position, transform.position, 1 * Time.deltaTime);
             yield return null;
         }
         DoAction();
