@@ -121,6 +121,7 @@ public class Dialogue : Interactable
         {
             m_text.text = m_cutDialogue[m_currentPage];
             m_currentLetter = m_cutDialogue[m_currentPage].Length;
+            m_waitingForPage = true;
         }
     }
 }

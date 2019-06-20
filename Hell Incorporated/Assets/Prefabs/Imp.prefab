@@ -238,7 +238,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_flySpeed: 6
+  m_flySpeed: 4
   m_impPool: {fileID: 11400000, guid: 77422b9312a3f4045915f16a1ac9361d, type: 2}
   m_impSpeed: 4
   m_impList: {fileID: 11400000, guid: 48c62e110ed8d32408db63b72a92c16d, type: 2}

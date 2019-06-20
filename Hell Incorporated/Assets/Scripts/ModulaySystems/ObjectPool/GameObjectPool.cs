@@ -66,6 +66,8 @@ public class GameObjectPool : ScriptableObject
 
     public void DestroyObject(GameObject obj)
     {
+        if (pool == null)
+            Init();
         //He dead
         obj.transform.SetParent(parent);
         obj.SetActive(false);

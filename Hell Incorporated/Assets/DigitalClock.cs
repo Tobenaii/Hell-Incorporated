@@ -16,7 +16,7 @@ public class DigitalClock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_gameTime.value = 0;
     }
 
     public string GetDigitalTime()

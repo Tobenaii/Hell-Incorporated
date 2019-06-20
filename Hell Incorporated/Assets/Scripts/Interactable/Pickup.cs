@@ -51,7 +51,6 @@ public class Pickup : Interactable
     public void OnDisable()
     {
         m_disabled = true;
-        transform.SetParent(m_originParent);
         m_rb.freezeRotation = false;
     }
     public override void OnHeld(GameObject hand)
