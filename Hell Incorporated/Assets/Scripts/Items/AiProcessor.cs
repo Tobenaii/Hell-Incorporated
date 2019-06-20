@@ -13,7 +13,7 @@ public class AiProcessor : Processor
     [SerializeField]
     private float m_distractionTime;
     [SerializeField]
-    private TextMeshPro m_distractedText;
+    private GameObject m_distractedSpeech;
     private float m_distractedTimer;
     private bool m_isDistracted;
 
@@ -21,6 +21,7 @@ public class AiProcessor : Processor
     {
         m_aiTimer = Random.Range(m_minAiSpeed, m_maxAiSpeed);
         m_distractedTimer = m_distractionTime;
+        m_distractedSpeech.SetActive(false);
     }
 
     private void Update()
@@ -31,11 +32,11 @@ public class AiProcessor : Processor
         if (m_isDistracted)
         {
             m_distractedTimer -= Time.deltaTime;
-            m_distractedText.text = "Distracted: " + ((int)(m_distractedTimer)).ToString();
+            m_distractedSpeech.SetActive(true);
             if (m_distractedTimer <= 0)
             {
                 m_isDistracted = false;
-                m_distractedText.text = "";
+                m_distractedSpeech.SetActive(false);
             }
             return;
         }

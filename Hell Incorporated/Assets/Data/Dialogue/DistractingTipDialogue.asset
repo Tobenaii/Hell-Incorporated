@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9decd0ad8b754418aecede19ce2941, type: 3}
   m_Name: DistractingTipDialogue
   m_EditorClassIdentifier: 
-  m_dialogueFile: {fileID: 4900000, guid: e68c39657ea835349a6c38c321e7458b, type: 3}
+  m_dialogueFile: {fileID: 4900000, guid: 354c64fe9114878448bec621d8c36136, type: 3}
   m_closeOnLastPage: 1
