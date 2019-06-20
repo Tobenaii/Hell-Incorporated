@@ -72,6 +72,7 @@ public class Imp : Interactable
                 break;
             }
         }
+        transform.position += Vector3.up * 2;
         m_isFlying = true;
         m_isWorking = false;
     }

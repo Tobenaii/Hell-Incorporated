@@ -21,6 +21,11 @@ public class Keyboard : Item
         m_text.text = "";
     }
 
+    public void Restart()
+    {
+        m_text.text = "";
+    }
+
     public void DoneType()
     {
         m_procState.state = ProcState.ProcessorState.Stamp;

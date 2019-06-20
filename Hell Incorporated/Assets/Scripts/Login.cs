@@ -20,6 +20,8 @@ public class Login : Interactable
     private DigitalClock m_clock;
     [SerializeField]
     private GameObject m_continueButton;
+    [SerializeField]
+    private FloatValue m_soulQuota;
 
     private void Awake()
     {
@@ -45,6 +47,6 @@ public class Login : Interactable
     {
         m_continueButton.SetActive(true);
         m_screenRenderer.material = m_performanceStatsMaterial;
-        m_statsText.text = "You have finished your shift at " + m_clock.GetDigitalTime();
+        m_statsText.text = "You have " + ((m_soulQuota.value <= 0)?"":"not") + " processed" + "all of the souls in your quota " +  ((m_soulQuota.value <= 0)?"":"(" + (m_soulQuota.value.ToString() + " souls remaining)")) +" and have finished your shift at " +  m_clock.GetDigitalTime();
     }
 }

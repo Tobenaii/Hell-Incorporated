@@ -56,7 +56,6 @@ public class DevilSpawner : MonoBehaviour
         if (m_wait)
         {
             m_waitTimer -= Time.deltaTime;
-            Debug.Log(m_waitTimer);
             if (m_waitTimer <= 0)
             {
                 m_wait = false;
