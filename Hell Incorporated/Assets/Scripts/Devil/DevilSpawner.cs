@@ -28,9 +28,11 @@ public class DevilSpawner : MonoBehaviour
     {
         m_canSpawn = true;
         m_waitTimer = m_spawnInterval;
+        m_wait = true;
     }
     void SpawnDevil()
     {
+        m_devilInScene = true;
         GetComponent<Devil>().Init();
         m_timer = 1;
         m_wait = true;
@@ -54,6 +56,7 @@ public class DevilSpawner : MonoBehaviour
         if (m_wait)
         {
             m_waitTimer -= Time.deltaTime;
+            Debug.Log(m_waitTimer);
             if (m_waitTimer <= 0)
             {
                 m_wait = false;
@@ -61,20 +64,15 @@ public class DevilSpawner : MonoBehaviour
             return;
         }
 
-
-
         m_timer -= Time.deltaTime;
         m_spawnChance = m_lerper.Lerp(0, 1000, m_maxTime);
         if (m_timer <= 0)
         {
             float spawn = Random.Range(0, 1000);
-            Debug.Log(spawn);
             if (spawn < m_spawnChance)
             {
-                Debug.Log(m_spawnChance);
                 m_lerper.Reset();
                 SpawnDevil();
-                m_devilInScene = true;
             }
             m_timer = 1;
         }
