@@ -69,7 +69,8 @@ public class HandPointer : MonoBehaviour
             m_previousHoverObject = hit.transform.gameObject;
             if (OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
             {
-                m_interacts = new List<Interactable>(hit.transform.GetComponents<Interactable>());
+                foreach (Interactable i in hit.transform.GetComponents<Interactable>())
+                    m_interacts.Add(i);
                 OnClick(hit.transform.gameObject);
             }
             m_line.SetPosition(1, hit.point);

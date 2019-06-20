@@ -33,7 +33,6 @@ public class EventTrigger : StateMachineBehaviour
                 m_onUpdate.Invoke();
         }
         m_currentFrame += Time.deltaTime;
-        Debug.Log(m_currentFrame);
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
