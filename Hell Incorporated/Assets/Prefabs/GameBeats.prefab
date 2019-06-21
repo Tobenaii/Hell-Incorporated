@@ -55,7 +55,7 @@ MonoBehaviour:
     m_event: {fileID: 11400000, guid: 8bdea7f1fa45b1d4fa9f2d27965f7e7e, type: 2}
   - m_timeTillBeat: 30
     m_event: {fileID: 11400000, guid: ab95d3c9bc1988a4ab64d3f4d4a1e166, type: 2}
-  - m_timeTillBeat: 10
+  - m_timeTillBeat: 480
     m_event: {fileID: 11400000, guid: ba4da3e14aee9aa4a9befb76bb942270, type: 2}
 --- !u!114 &6095106891920325996
 MonoBehaviour:
