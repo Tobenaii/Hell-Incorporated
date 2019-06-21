@@ -661,82 +661,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed2c7ea896a20de42a84abef822e80eb, type: 3}
---- !u!1 &645778188 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7183582777548147419, guid: b8172f7ec4637124abbf38c2c8f4acbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 283146337}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &645778189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645778188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 12e988484571ae542bab0f797d50c8a6, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645778190}
-        m_MethodName: StartImps
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &645778190 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7183582777548147417, guid: b8172f7ec4637124abbf38c2c8f4acbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 283146337}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645778188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3679b528306450d4fb498e04e455ff10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &645778191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645778188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: ba4da3e14aee9aa4a9befb76bb942270, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 645778190}
-        m_MethodName: StopImps
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &780252829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -803,14 +727,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 998016978, guid: 1c7daee1e39298b4399aac889a296553, type: 3}
-      propertyPath: m_Size.x
-      value: 5.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 998016978, guid: 1c7daee1e39298b4399aac889a296553, type: 3}
-      propertyPath: m_Center.x
-      value: -2.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c7daee1e39298b4399aac889a296553, type: 3}
@@ -2321,95 +2237,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6095106891920325994, guid: 4efcce3ac7d36a64398bfe7e72d3bfb0,
-        type: 3}
-      propertyPath: m_beats.Array.data[3].m_timeTillBeat
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6095106891920325994, guid: 4efcce3ac7d36a64398bfe7e72d3bfb0,
-        type: 3}
-      propertyPath: m_beats.Array.data[3].m_event
-      value: 
-      objectReference: {fileID: 11400000, guid: ba4da3e14aee9aa4a9befb76bb942270,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efcce3ac7d36a64398bfe7e72d3bfb0, type: 3}
---- !u!1 &2142198690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2238229781037908139, guid: 41752a6451317e949ad9e4af3e1eed0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1206771821}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2142198691 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2238229781037908140, guid: 41752a6451317e949ad9e4af3e1eed0b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1206771821}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142198690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72690c4fcfc3ab845991136890b29125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2142198692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142198690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 12e988484571ae542bab0f797d50c8a6, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2142198691}
-        m_MethodName: StartSpawning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &2142198693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142198690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e4d4ade0faafe49b2fe2d55c4c2fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: f4191b0fcead3d046aa65267cbe6f3fb, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2142198691}
-        m_MethodName: StartSpawning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &7034817947100403560
 PrefabInstance:
   m_ObjectHideFlags: 0
