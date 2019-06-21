@@ -6,47 +6,59 @@ using UnityEngine;
 public class Login : Interactable
 {
     [SerializeField]
-    private GameEvent m_scanDialogueEvent;
+    private GameObject m_mainMenu;
     [SerializeField]
-    private Renderer m_screenRenderer;
+    private Material m_mainMenuMat;
     [SerializeField]
-    private Material m_gameScreenMaterial;
-    private Material m_welcomeMaterial;
+    private GameObject m_inGame;
     [SerializeField]
-    private Material m_performanceStatsMaterial;
+    private Material m_inGameMat;
     [SerializeField]
-    private TextMeshPro m_statsText;
+    private GameObject m_endGame;
     [SerializeField]
-    private DigitalClock m_clock;
+    private Material m_endGameMat;
     [SerializeField]
-    private GameObject m_continueButton;
+    private Renderer m_renderer;
+
     [SerializeField]
-    private FloatValue m_soulQuota;
+    private GameEvent m_showStatsEvent;
 
     private void Awake()
     {
-        m_welcomeMaterial = m_screenRenderer.material;
-        m_continueButton.SetActive(false);
+        ShowMainMenu();
     }
 
-    public void Restart()
+    public void ShowMainMenu()
     {
-        m_continueButton.SetActive(false);
-        m_screenRenderer.material = m_gameScreenMaterial;
-        m_statsText.text = "";
+        HideAll();
+        m_mainMenu.SetActive(true);
+        m_renderer.material = m_mainMenuMat;
+    }
+
+    public void ShowInGame()
+    {
+        HideAll();
+        m_inGame.SetActive(true);
+        m_renderer.material = m_inGameMat;
+    }
+
+    public void ShowEndGame()
+    {
+        HideAll();
+        m_endGame.SetActive(true);
+        m_renderer.material = m_endGameMat;
+        m_showStatsEvent.Invoke();
+    }
+
+    private void HideAll()
+    {
+        m_mainMenu.SetActive(false);
+        m_inGame.SetActive(false);
+        m_endGame.SetActive(false);
     }
 
     public override void OnClick(GameObject hand)
     {
         base.OnClick(hand);
-        m_screenRenderer.material = m_gameScreenMaterial;
-        m_scanDialogueEvent.Invoke();
-    }
-
-    public void ShowPerformanceStats()
-    {
-        m_continueButton.SetActive(true);
-        m_screenRenderer.material = m_performanceStatsMaterial;
-        m_statsText.text = "You have " + ((m_soulQuota.value <= 0)?"":"not") + " processed" + "all of the souls in your quota " +  ((m_soulQuota.value <= 0)?"":"(" + (m_soulQuota.value.ToString() + " souls remaining)")) +" and have finished your shift at " +  m_clock.GetDigitalTime();
     }
 }

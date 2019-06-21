@@ -20,6 +20,7 @@ public class Imp : Interactable
 
     public bool IsWorking => m_isWorking;
     private bool m_isWorking;
+    bool m_goingToHell;
 
     private void Start()
     {
@@ -36,11 +37,17 @@ public class Imp : Interactable
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().useGravity = false;
         transform.rotation = Quaternion.identity;
+        m_goingToHell = false;
     }
 
     private void OnEnable()
     {
 
+    }
+
+    public void EndGame()
+    {
+        FlyAway();
     }
 
     private void OnDisable()
@@ -71,6 +78,7 @@ public class Imp : Interactable
                 m_workingImpList.List[i] = null;
                 m_isFlying = true;
                 m_isWorking = false;
+                m_goingToHell = true;
                 return;
             }
         }
@@ -84,14 +92,17 @@ public class Imp : Interactable
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(-12.4f, 5, 0), m_flySpeed * Time.deltaTime);
         transform.forward = new Vector3(-12.4f, 5, 0) - transform.position;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!m_goingToHell && Input.GetKeyDown(KeyCode.Space))
             Fall();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Portal"))
+        {
+            StopAllCoroutines();
             m_impPool.DestroyObject(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

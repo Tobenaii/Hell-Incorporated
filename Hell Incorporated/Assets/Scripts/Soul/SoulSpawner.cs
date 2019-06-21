@@ -18,12 +18,10 @@ public class SoulSpawner : MonoBehaviour
     private ProcessorListSet m_procListSet = null;
     private float m_timer;
     private Soul m_currentSoul;
+    bool m_canSpawn;
 
     private void Start()
     {
-        m_timer = m_spawnRate;
-        m_inQueue = m_queueAmmount;
-        m_nextQueueTimer = m_timeForNextQueue;
     }
 
     private void Update()
@@ -46,8 +44,23 @@ public class SoulSpawner : MonoBehaviour
         }
     }
 
+    public void StartSpawning()
+    {
+        m_canSpawn = true;
+        m_timer = m_spawnRate;
+        m_inQueue = m_queueAmmount;
+        m_nextQueueTimer = m_timeForNextQueue;
+    }
+
+    public void StopSpawning()
+    {
+        m_canSpawn = false;
+    }
+
     private void SpawnSoul()
     {
+        if (!m_canSpawn)
+            return;
         if (m_currentSoul == null)
         {
             GameObject soulObj = m_soulPool.GetObject();
