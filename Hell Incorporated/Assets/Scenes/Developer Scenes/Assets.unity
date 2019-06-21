@@ -270,10 +270,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100000, guid: e30db8a4ab2155d43857e914b4f4a363, type: 3}
-      propertyPath: m_Name
-      value: SM_Imp 1
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e30db8a4ab2155d43857e914b4f4a363, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.0685024
@@ -318,10 +314,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e30db8a4ab2155d43857e914b4f4a363, type: 3}
+      propertyPath: m_Name
+      value: SM_Imp 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: e30db8a4ab2155d43857e914b4f4a363, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ebd504b49244dda4b9ba6218c95681ac, type: 2}
+      objectReference: {fileID: 2100000, guid: 393b4c5e61a0a73468e18fef143cf2b8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e30db8a4ab2155d43857e914b4f4a363, type: 3}
 --- !u!1001 &1123566677
@@ -1586,6 +1586,7 @@ MonoBehaviour:
   m_soulQuota: {fileID: 11400000, guid: 1a8914b8e80c8734d96bdc10ed1f0fb2, type: 2}
   m_initSoulQuota: 100
   m_procState: {fileID: 11400000, guid: f0ae1e0d5eefdd44991025f6abbc7601, type: 2}
+  m_endGameEvent: {fileID: 0}
 --- !u!4 &2318058899754317028
 Transform:
   m_ObjectHideFlags: 0
@@ -8158,17 +8159,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_scanDialogueEvent: {fileID: 11400000, guid: f4191b0fcead3d046aa65267cbe6f3fb,
-    type: 2}
-  m_screenRenderer: {fileID: 3643306834555076247}
-  m_gameScreenMaterial: {fileID: 2100000, guid: 5fa5c0bfae736674eae3dd703819a702,
-    type: 2}
-  m_performanceStatsMaterial: {fileID: 2100000, guid: 40db6bc8893c5cf468b5b37cee0eda2e,
-    type: 2}
-  m_statsText: {fileID: 3444076675855402802}
-  m_clock: {fileID: 3444076676287755214}
-  m_continueButton: {fileID: 3444076675439834340}
-  m_soulQuota: {fileID: 0}
+  m_mainMenu: {fileID: 0}
+  m_mainMenuMat: {fileID: 0}
+  m_inGame: {fileID: 0}
+  m_inGameMat: {fileID: 0}
+  m_endGame: {fileID: 0}
+  m_endGameMat: {fileID: 0}
+  m_renderer: {fileID: 0}
+  m_showStatsEvent: {fileID: 0}
 --- !u!4 &3444076675948810206
 Transform:
   m_ObjectHideFlags: 0
@@ -18938,7 +18936,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ebd504b49244dda4b9ba6218c95681ac, type: 2}
+  - {fileID: 2100000, guid: 393b4c5e61a0a73468e18fef143cf2b8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19803,7 +19801,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ebd504b49244dda4b9ba6218c95681ac, type: 2}
+  - {fileID: 2100000, guid: 393b4c5e61a0a73468e18fef143cf2b8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
