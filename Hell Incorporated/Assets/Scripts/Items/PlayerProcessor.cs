@@ -10,21 +10,34 @@ public class PlayerProcessor : Processor
     private float m_initSoulQuota;
     [SerializeField]
     private ProcState m_procState;
+    [SerializeField]
+    private GameEvent m_endGameEvent;
 
     private void Start()
     {
         m_soulQuota.value = m_initSoulQuota;
     }
 
+    private void Update()
+    {
+        if (m_soulQuota.value <= 0)
+        {
+            m_endGameEvent.Invoke();
+            m_procState.state = ProcState.ProcessorState.None;
+        }
+    }
+
     public void Restart()
     {
         m_soulQuota.value = m_initSoulQuota;
         m_procListSet.Add(this);
+        m_procState.state = ProcState.ProcessorState.Scan;
     }
 
     public void DisableProcessor()
     {
         m_procListSet.Remove(this);
+        base.SendToHell();
     }
 
     public override void StartProcessing(Soul soul)

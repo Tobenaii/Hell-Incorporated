@@ -38,6 +38,13 @@ public class Imp : Interactable
         transform.rotation = Quaternion.identity;
     }
 
+    public void Restart()
+    {
+        if (!m_isWorking)
+            return;
+        FlyAway();
+    }
+
     private void OnEnable()
     {
 
