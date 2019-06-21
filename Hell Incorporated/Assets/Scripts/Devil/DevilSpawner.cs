@@ -30,12 +30,6 @@ public class DevilSpawner : MonoBehaviour
         m_waitTimer = m_spawnInterval;
         m_wait = true;
     }
-
-    public void StopDevil()
-    {
-        m_canSpawn = false;
-    }
-
     void SpawnDevil()
     {
         m_devilInScene = true;

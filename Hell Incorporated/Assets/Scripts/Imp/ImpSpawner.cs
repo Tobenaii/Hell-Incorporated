@@ -24,11 +24,6 @@ public class ImpSpawner : MonoBehaviour
         m_canSpawn = true;
     }
 
-    public void StopImps()
-    {
-        m_canSpawn = false;
-    }
-
     private void Update()
     {
         if (!m_canSpawn)

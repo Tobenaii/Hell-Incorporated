@@ -56,8 +56,6 @@ public class Processor : MonoBehaviour
 
     public virtual void SendToHell()
     {
-        if (!m_currentSoul)
-            return;
         m_currentSoul.SendToHell();
         m_paperInstance.GetComponent<Paper>().Stamp();
         IsProcessing = false;
