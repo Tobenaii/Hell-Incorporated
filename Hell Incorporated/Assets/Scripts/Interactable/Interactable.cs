@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
+    //This class is used to invoke events when it is interacted with (called by HandPointer)
     [SerializeField]
     private GameEvent m_onClick;
     [SerializeField]

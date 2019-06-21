@@ -21,6 +21,7 @@ public class BobAnim : AnimState
 
     public override bool UpdateAnim(Transform transform)
     {
+        //bob up and down based on sin wave
         m_sin += m_bobSpeed * Time.deltaTime;
         float sin = Mathf.Sin(m_sin);
         transform.position = new Vector3(transform.position.x, m_initHeight + sin * m_bobHeight, transform.position.z);

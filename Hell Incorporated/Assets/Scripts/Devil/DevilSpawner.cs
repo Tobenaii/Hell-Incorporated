@@ -53,6 +53,7 @@ public class DevilSpawner : MonoBehaviour
         if (m_devilInScene)
             return;
 
+        //Wait for specified seconds before starting random spawn again
         if (m_wait)
         {
             m_waitTimer -= Time.deltaTime;
@@ -63,6 +64,7 @@ public class DevilSpawner : MonoBehaviour
             return;
         }
 
+        //Every second, check if random number is less than spawnChance
         m_timer -= Time.deltaTime;
         m_spawnChance = m_lerper.Lerp(0, 1000, m_maxTime);
         if (m_timer <= 0)
@@ -70,6 +72,7 @@ public class DevilSpawner : MonoBehaviour
             float spawn = Random.Range(0, 1000);
             if (spawn < m_spawnChance)
             {
+                //Spawn the devil
                 m_lerper.Reset();
                 SpawnDevil();
             }

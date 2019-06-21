@@ -20,10 +20,12 @@ public class Soul : MonoBehaviour
     // Start is called before the first frame update
     public bool FindProcessor(ProcessorListSet procListSet)
     {
+        //Find a processor that isn't currently processing
         foreach (Processor proc in procListSet.List)
         {
             if (!proc.IsProcessing)
             {
+                //If we've found one, lock it so that no other soul can assign itself to it
                 m_currentProcessor = proc;
                 proc.Lock();
                 return true;
@@ -39,6 +41,7 @@ public class Soul : MonoBehaviour
 
     public void Update()
     {
+        //Lots of scripted animation so that the soul moves to the different locations on the way to the processor that it's assigned to
         if (m_sendingToHell)
         {
             transform.position = Vector3.MoveTowards(transform.position, m_hellDoor.value.transform.position, m_goingToHellMoveSpeed * Time.deltaTime);

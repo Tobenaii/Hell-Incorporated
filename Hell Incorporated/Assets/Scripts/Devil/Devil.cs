@@ -43,10 +43,12 @@ public class Devil : MonoBehaviour
 
     private void LookForStuffToGetAngryAbout()
     {
+        //Check if there are any working imps in the list
         foreach (GameObject imp in m_workingImpList.List)
         {
             if (imp != null)
             {
+                //If there are working imps, add to soul quota and trigger animation
                 m_soulQuota.value += m_soulQuotaIncrease;
                 m_animator.SetTrigger("GetAngry");
                 return;
@@ -56,6 +58,7 @@ public class Devil : MonoBehaviour
 
     public void ScareImps()
     {
+        //Scare all the imps away (this is called on the frame that the devil scares away imps in its animation)
         for (int i = 0; i < 3; i++)
         {
             if (m_workingImpList.List[i])

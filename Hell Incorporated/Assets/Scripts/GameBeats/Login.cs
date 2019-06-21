@@ -47,6 +47,7 @@ public class Login : Interactable
         HideAll();
         m_endGame.SetActive(true);
         m_renderer.material = m_endGameMat;
+        //Can only be invoked after it is enabled so it is called here using another event
         m_showStatsEvent.Invoke();
     }
 

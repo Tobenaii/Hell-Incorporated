@@ -17,6 +17,7 @@ public class LookAroundAnim : AnimState
 
     public override void Init(Transform transform)
     {
+        //Initialize first transform values to base animation from
         Quaternion initRot = transform.rotation;
         transform.Rotate(transform.up, -m_maxLookAngle);
         m_rotation1 = transform.rotation;
@@ -29,6 +30,7 @@ public class LookAroundAnim : AnimState
 
     public override bool UpdateAnim(Transform transform)
     {
+        //Rotate left
         if (m_state == RotationState.RotateLeft)
         {
             if (transform.rotation != m_rotation1)
@@ -40,6 +42,7 @@ public class LookAroundAnim : AnimState
         }
         else
         {
+            //Rotate right
             if (transform.rotation != m_rotation2)
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, m_rotation2, m_rotationSpeed * Time.deltaTime);
