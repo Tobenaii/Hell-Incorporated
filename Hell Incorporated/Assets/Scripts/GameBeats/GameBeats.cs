@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 class BeatData
 {
+    //Class for holding game beat information. After the gameTime has passed timeTillBeat, invoke the event
     [SerializeField]
     private float m_timeTillBeat;
     [SerializeField]
@@ -19,10 +20,12 @@ class BeatData
 
     public void Invoke(float gameTime)
     {
+        //Check if gameTIme has passed the beat time
         if (gameTime < m_timeTillBeat)
             return;
         if (m_invoked)
             return;
+        //Invoke event only once
         m_invoked = true;
         m_event.Invoke();
     }
@@ -41,6 +44,7 @@ public class GameBeats : MonoBehaviour
 
     public void RestartGame()
     {
+        //Resets all beats so they can be invoked again
         m_gameTimer.value = 0;
         m_gameStarted = true;
         foreach (BeatData beat in m_beats)
@@ -61,7 +65,7 @@ public class GameBeats : MonoBehaviour
     {
         if (!m_gameStarted)
             return;
-
+        //Update the beats
         m_gameTimer.value += Time.deltaTime;
         foreach (BeatData beat in m_beats)
         {

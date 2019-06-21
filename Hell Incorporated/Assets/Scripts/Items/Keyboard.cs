@@ -28,10 +28,12 @@ public class Keyboard : Item
 
     public void DoneType()
     {
+        //Change the processing state to stamp and invoke the action
         m_procState.state = ProcState.ProcessorState.Stamp;
         m_actionEvent.Invoke();
         if (m_inTutorial)
         {
+            //If in tutorial, invoke keyboard tutorial done action
             m_inTutorial = false;
             m_arrow.SetActive(false);
             m_tutorialDoneEvent.Invoke();
@@ -41,6 +43,7 @@ public class Keyboard : Item
 
     public override void DoAction()
     {
+        //Play type sound and update computer text
         m_audio.Play();
         if (m_procState.state != ProcState.ProcessorState.Type)
             return;

@@ -26,6 +26,7 @@ public class SoulSpawner : MonoBehaviour
 
     private void Update()
     {
+        //Check if theres any souls n the queue and spawn at the spawn rate
         if (m_inQueue == 0)
         {
             m_nextQueueTimer -= Time.deltaTime;
@@ -46,6 +47,7 @@ public class SoulSpawner : MonoBehaviour
 
     public void StartSpawning()
     {
+        //Enable spawning and initialize timer values
         m_canSpawn = true;
         m_timer = m_spawnRate;
         m_inQueue = m_queueAmmount;
@@ -61,6 +63,7 @@ public class SoulSpawner : MonoBehaviour
     {
         if (!m_canSpawn)
             return;
+        //Get a soul from the object pool and assign it as the current soul
         if (m_currentSoul == null)
         {
             GameObject soulObj = m_soulPool.GetObject();

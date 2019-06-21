@@ -30,6 +30,7 @@ public class Paper : MonoBehaviour
 
     private void Update()
     {
+        //If going to hell, move towards portal
         if (m_sendingToHell)
         {
             transform.position = Vector3.MoveTowards(transform.position, m_hellDoor.value.transform.position, m_goingToHellMoveSpeed * Time.deltaTime);

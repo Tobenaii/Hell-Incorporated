@@ -19,6 +19,7 @@ public class EndGameStats : MonoBehaviour
 
     public void ShowStats()
     {
+        //Check if the player had won when the game ended
         if (m_soulQuota.value <= 0)
         {
             m_text.text = "Congratulatory text congratulating you for your achievenemts. Congratulations! You finished your shift at " + m_clock.GetDigitalTime();

@@ -40,14 +40,17 @@ public class MoveTowards : AnimState
 
     public override bool UpdateAnim(Transform transform)
     {
+        //Get new target from target and offset
         Vector3 offset = m_target.value.transform.forward * m_forwardOffset + m_target.value.transform.right * m_rightOffset + m_target.value.transform.up * m_upOffset;
         Vector3 target = m_target.value.transform.position + offset;
+        //Lock axis so it doesn't move along it but checks still work
         if (m_lockX)
             target.x = transform.position.x;
         if (m_lockY)
             target.y = transform.position.y;
         if (m_lockZ)
             target.z = transform.position.z;
+        //Only check along these axes
         Vector3 check = transform.position;
         if (m_checkX)
             check.x = target.x;
@@ -55,6 +58,7 @@ public class MoveTowards : AnimState
             check.y = target.y;
         if (m_checkZ)
             check.z = target.z;
+        //Move and check for target pos
         if (Vector3.Distance(transform.position, check) > 0.1f)
         {
             transform.position = m_lerper.Lerp(m_initPos, target, m_moveTime);

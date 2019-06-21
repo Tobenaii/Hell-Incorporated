@@ -14,8 +14,6 @@ public class Processor : MonoBehaviour
     private GameObject m_paperInstance;
     private Soul m_currentSoul;
 
-
-
     private bool m_isProcessing;
     public bool IsProcessing { get { return m_isProcessing; } private set { m_isProcessing = value; } }
 
@@ -45,6 +43,7 @@ public class Processor : MonoBehaviour
 
     protected void Init()
     {
+        //Add this processor to the list based on position relative to other processors already in list
         int index = 0;
         foreach (Processor proc in m_procListSet.List)
         {
@@ -58,6 +57,7 @@ public class Processor : MonoBehaviour
     {
         if (!m_currentSoul)
             return;
+        //Stamp the paper and send it to hell
         m_currentSoul.SendToHell();
         m_paperInstance.GetComponent<Paper>().Stamp();
         IsProcessing = false;

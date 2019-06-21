@@ -14,6 +14,7 @@ public class Phone : Interactable
 
     public void Ring(DialogueData dList)
     {
+        //Start ringing and store dialogue data for later
         StopPhone();
         m_phoneRingSound.Play();
         m_currentDialogueData = dList;
@@ -25,12 +26,14 @@ public class Phone : Interactable
     {
         if (!m_currentDialogueData)
             return;
+        //Give dialogue data to dialogue system to open the dialogue
         base.OnClick(hand);
         OpenDialogue(m_currentDialogueData);
         m_currentDialogueData = null;
     }
     public void StopPhone()
     {
+        //Stop the ringing and remove dialogue data
         m_phoneRingSound.Stop();
         m_dialogue.CloseDialogue();
         m_animator.SetTrigger("Stop");

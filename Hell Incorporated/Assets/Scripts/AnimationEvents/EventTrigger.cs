@@ -18,6 +18,7 @@ public class EventTrigger : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Invoke onstart at start of animation
         if (m_onStart)
             m_onStart.Invoke();
         m_currentFrame = 0;
@@ -26,7 +27,7 @@ public class EventTrigger : StateMachineBehaviour
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // Implement code that processes and affects root motion
+        //Invoke onUpdate on specified time
         if (m_onUpdate)
         {
             if (m_currentFrame >= m_frame)
@@ -38,6 +39,7 @@ public class EventTrigger : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //invoke onComplete when animation state exits
         if (m_onComplete)
             m_onComplete.Invoke();
     }

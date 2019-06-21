@@ -67,6 +67,7 @@ public class HandPointer : MonoBehaviour
                 m_hoverInteracts.Clear();
             }
             m_previousHoverObject = hit.transform.gameObject;
+            //Call OnClick on interactable objects when button is pressed
             if (OVRInput.GetDown(Button.PrimaryIndexTrigger) || Input.GetMouseButtonDown(0))
             {
                 foreach (Interactable i in hit.transform.GetComponents<Interactable>())
@@ -81,6 +82,7 @@ public class HandPointer : MonoBehaviour
             m_line.SetPosition(1, ray.origin + ray.direction * 500);
         }
 
+        //Call onrelease on interactable objects when interact button is not pressed anymore and clear stored interactables
         if (m_heldObject != null)
         {
             if (OVRInput.GetUp(Button.PrimaryIndexTrigger) || Input.GetMouseButtonUp(0))

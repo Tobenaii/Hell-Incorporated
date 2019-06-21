@@ -34,10 +34,12 @@ public class AutoWorker : MonoBehaviour
         {
             if (m_workingImpList.List[m_workerIndex] == null)
             {
+                //Give back control to the player if there is no imp anymore
                 m_hasImp = false;
                 GiveBackControl();
                 return;
             }
+            //Move the imp towards the imp location in the cubicle
                 if (!m_doingAction)
                 StartCoroutine(GetImp());
             return;
@@ -47,6 +49,7 @@ public class AutoWorker : MonoBehaviour
 
     private void CheckForImp()
     {
+        //Check if there is an imp in the workingImpList at the location of this worker index
         if (m_workingImpList.Count < m_workerIndex + 1)
             m_workingImpList.Add(null);
         else if (m_workingImpList.List[m_workerIndex])
@@ -58,6 +61,7 @@ public class AutoWorker : MonoBehaviour
 
     private IEnumerator GetImp()
     {
+        //Move the imp towards the assigned imp location in the cubicle
         GameObject imp = m_workingImpList.List[m_workerIndex];
         imp.transform.rotation = transform.rotation;
         while (Vector3.Distance(imp.transform.position, transform.position) > 0.005f)
@@ -72,6 +76,7 @@ public class AutoWorker : MonoBehaviour
     {
         if (m_doingAction)
             return;
+        //If the current state is the same as the worker index (scan = 0, type = 1, stamp = 2), run the animation 
         if (m_procState.state == (ProcState.ProcessorState)m_workerIndex)
         {
             m_boundItem.enabled = false;
@@ -85,12 +90,14 @@ public class AutoWorker : MonoBehaviour
 
     public void TriggerAction()
     {
+        //Trigger the item action when the animation is complete
         m_item.DoAction();
         m_doingAction = false;
     }
 
     private void GiveBackControl()
     {
+        //Let the player interact with the item again
         m_boundItem.enabled = true;
         m_boundItem.GetComponent<Pickup>().enabled = true;
         m_boundItem.GetComponent<Rigidbody>().isKinematic = false;

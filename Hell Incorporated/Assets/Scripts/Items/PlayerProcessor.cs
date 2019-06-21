@@ -29,6 +29,7 @@ public class PlayerProcessor : Processor
     {
         if (m_ended)
             return;
+        //Invoke EndGame event if the player reaches 0 souls left in quota
         if (m_soulQuota.value <= 0)
         {
             m_procState.state = ProcState.ProcessorState.None;
@@ -39,6 +40,7 @@ public class PlayerProcessor : Processor
 
     public void Restart()
     {
+        //Restart the processor to start processing from the beginning again
         m_soulQuota.value = m_initSoulQuota;
         m_procListSet.Add(this);
         m_procState.state = ProcState.ProcessorState.Scan;
@@ -47,6 +49,7 @@ public class PlayerProcessor : Processor
 
     public void DisableProcessor()
     {
+        //Remove processor from list so souls stop coming
         m_procListSet.Remove(this);
         base.SendToHell();
     }

@@ -29,6 +29,7 @@ public class Imp : Interactable
 
     public void Init()
     {
+        //Get the imp ready to start flying to the portal
         m_isWorking = false;
         m_isFlying = true;
         m_impList.Add(gameObject);
@@ -52,11 +53,13 @@ public class Imp : Interactable
 
     private void OnDisable()
     {
+        //Remove imp from list so it isn't tracked
         m_impList.Remove(gameObject);
     }
 
     public void Fall()
     {
+        //Make imp fall
         GetComponent<Rigidbody>().useGravity = true;
         m_impList.Remove(gameObject);
         m_isFlying = false;
@@ -71,10 +74,12 @@ public class Imp : Interactable
     {
         if (!m_isWorking)
             return;
+        //Check if this imp is actually in the workingImps list
         for (int i = 0; i < 3; i++)
         {
             if (m_workingImpList.List[i] == gameObject)
             {
+                //If so then remove it and change state so it flies to portal
                 m_workingImpList.List[i] = null;
                 m_isFlying = true;
                 m_isWorking = false;
@@ -89,24 +94,29 @@ public class Imp : Interactable
         if (!m_isFlying)
             return;
 
+        //Move towards portal
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(-12.4f, 5, 0), m_flySpeed * Time.deltaTime);
         transform.forward = new Vector3(-12.4f, 5, 0) - transform.position;
 
+        //Hack so I don't have to knock down imps everytime I test
+#if UNITY_EDITOR
         if (!m_goingToHell && Input.GetKeyDown(KeyCode.Space))
             Fall();
+#endif
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Destroy the imp when it passes the portal
         if (other.transform.CompareTag("Portal"))
         {
-            StopAllCoroutines();
             m_impPool.DestroyObject(gameObject);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //If the imp hits the ground, check for an empty spot in the working imps list and add it if there's one
         if (collision.transform.CompareTag("Ground"))
         {
             if (m_workingImpList.Containts(gameObject))
@@ -117,6 +127,7 @@ public class Imp : Interactable
             {
                 if (!m_workingImpList.List[i])
                 {
+                    //Working imps don't have physics interactions
                     m_rb.isKinematic = true;
                     m_workingImpList.List[i] = gameObject;
                     m_isWorking = true;

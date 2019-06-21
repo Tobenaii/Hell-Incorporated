@@ -28,6 +28,7 @@ public class Pickup : Interactable
         if (m_disabled)
             return;
         base.OnClick(hand);
+        //Set parent to the object that picked this up
         transform.SetParent(hand.transform);
         m_rb.freezeRotation = true;
     }
@@ -45,6 +46,7 @@ public class Pickup : Interactable
         float force = 60 * Vector3.Magnitude(forceDir);
         if (force > 200)
             force = 200;
+        //Apply the force after transforming it to better suit where the player expects it to be thrown
         m_rb.AddForce(Vector3.Normalize(hand.transform.up * -1 + hand.transform.forward) * force, ForceMode.Impulse);
     }
 
@@ -59,6 +61,7 @@ public class Pickup : Interactable
             return;
         //Mvoe object towards hand
         base.OnHeld(hand);
+        //Move the object to the hand over time so it doesn't glitch through objects as much
         Vector3 direction = hand.transform.position + hand.transform.forward * 0.2f - transform.position;
 
 #if UNITY_EDITOR

@@ -31,6 +31,7 @@ public class ImpSpawner : MonoBehaviour
 
     private void Update()
     {
+        //Spawn an imp if the random int is below the spawn chance
         if (!m_canSpawn)
             return;
         m_spawnTimer -= Time.deltaTime;

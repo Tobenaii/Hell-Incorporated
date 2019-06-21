@@ -13,9 +13,11 @@ public class Stamp : Item
 
     public override void DoAction()
     {
+        //Invoke stamp event
         m_actionEvent.Invoke();
         m_procState.state = ProcState.ProcessorState.None;
         m_stampAudio.Play();
+        //If we're in the tutorial, invoke tutorial event and disable arrow
         if (m_inTutorial)
         {
             m_arrow.SetActive(false);
@@ -26,6 +28,7 @@ public class Stamp : Item
 
     private void OnTriggerEnter(Collider other)
     {
+        //Do the stamp action if the current state is Stamp and the trigger is paper
         if (m_procState.state != ProcState.ProcessorState.Stamp)
             return;
         if (other.transform.CompareTag("StampArea"))
@@ -36,6 +39,7 @@ public class Stamp : Item
 
     private void OnTriggerStay(Collider other)
     {
+        //Rotate the stamp towards the paper so it can stamp properly
         if (other.transform.CompareTag("Paper"))
         {
             Quaternion q = Quaternion.Euler(0, 0, 0);
